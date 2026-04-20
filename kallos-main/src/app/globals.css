@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@100;200;300;400;500;600&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+  :root {
+    --radius: 0;
+    --kallos-black: #121212;
+    --kallos-charcoal: #252525;
+    --kallos-ivory: #F7F5F0;
+    --kallos-cream: #FAF9F6;
+    --kallos-gold: #B4975A;
+    --kallos-champagne: #D4C4A8;
+    --kallos-sand: #E3DCD2;
+    --kallos-warm-grey: #8E8881;
+    
+    --background: var(--kallos-ivory);
+    --foreground: var(--kallos-charcoal);
+    --card: var(--kallos-cream);
+    --card-foreground: var(--kallos-charcoal);
+    --popover: var(--kallos-cream);
+    --popover-foreground: var(--kallos-charcoal);
+    --primary: var(--kallos-charcoal);
+    --primary-foreground: var(--kallos-ivory);
+    --secondary: var(--kallos-sand);
+    --secondary-foreground: var(--kallos-charcoal);
+    --muted: var(--kallos-sand);
+    --muted-foreground: var(--kallos-warm-grey);
+    --accent: var(--kallos-gold);
+    --accent-foreground: var(--kallos-ivory);
+    --destructive: #AF3A3A;
+    --border: rgba(37, 37, 37, 0.1);
+    --input: rgba(37, 37, 37, 0.05);
+    --ring: var(--kallos-gold);
+  }
+
+  .dark {
+    --background: #0C0C0C;
+    --foreground: var(--kallos-ivory);
+    --card: #161616;
+    --card-foreground: var(--kallos-ivory);
+    --popover: #161616;
+    --popover-foreground: var(--kallos-ivory);
+    --primary: var(--kallos-ivory);
+    --primary-foreground: var(--kallos-black);
+    --secondary: #1E1E1E;
+    --secondary-foreground: var(--kallos-ivory);
+    --muted: #181818;
+    --muted-foreground: var(--kallos-warm-grey);
+    --accent: var(--kallos-gold);
+    --accent-foreground: var(--kallos-black);
+    --destructive: #AF3A3A;
+    --border: rgba(247, 245, 240, 0.07);
+    --input: rgba(247, 245, 240, 0.05);
+    --ring: var(--kallos-gold);
+  }
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Outfit', sans-serif;
+  --color-kallos-black: var(--kallos-black);
+  --color-kallos-charcoal: var(--kallos-charcoal);
+  --color-kallos-ivory: var(--kallos-ivory);
+  --color-kallos-cream: var(--kallos-cream);
+  --color-kallos-gold: var(--kallos-gold);
+  --color-kallos-champagne: var(--kallos-champagne);
+  --color-kallos-sand: var(--kallos-sand);
+  --color-kallos-warm-grey: var(--kallos-warm-grey);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  ::selection {
+    background: var(--kallos-gold);
+    color: var(--kallos-black);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .font-editorial {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .letter-spacing-luxury {
+    letter-spacing: 0.2em;
+  }
+  
+  .clip-reveal {
+    clip-path: inset(0 100% 0 0);
+  }
+  
+  .clip-reveal-active {
+    clip-path: inset(0 0 0 0);
+  }
+  
+  .line-mask {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--kallos-black) 50%,
+      transparent 100%
+    );
+    background-size: 100% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .luxury-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--kallos-cream) 0%,
+      var(--kallos-sand) 50%,
+      var(--kallos-champagne) 100%
+    );
+  }
+  
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--kallos-champagne) 0%,
+      var(--kallos-gold) 50%,
+      var(--kallos-champagne) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0%, 100% {
+      background-position: 200% 0;
+    }
+    50% {
+      background-position: -200% 0;
+    }
+  }
+  
+  .hover-lift {
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+  
+  .image-reveal {
+    overflow: hidden;
+  }
+  
+  .image-reveal img {
+    transform: scale(1.2);
+    transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .image-reveal:hover img {
+    transform: scale(1);
+  }
+}
+
+.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

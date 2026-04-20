@@ -1,0 +1,12 @@
+# Evaluation runs — generated or cloned content
+results/
+test_repos/
+
+# Python (if used here later)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

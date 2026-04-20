@@ -1,0 +1,13 @@
+generated/**
+*.generated.ts
+vendor/**
+node_modules/**
+**/node_modules/**
+**/.next/**
+**/dist/**
+**/build/**
+**/out/**
+**/.turbo/**
+**/coverage/**
+.code-review-graph
+.git
