@@ -1,0 +1,13 @@
+{
+  "version": "1",
+  "framework": "nextjs",
+  "domains": [
+    "localhost",
+    "127.0.0.1"
+  ],
+  "certDir": ".trustlocal",
+  "configFiles": [
+    "next.config.ts"
+  ],
+  "createdAt": "2026-03-30T20:33:59.331Z"
+}
