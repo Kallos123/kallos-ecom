@@ -56,7 +56,7 @@ export default function WishlistPage() {
   const items = wishlist?.items ?? [];
 
   return (
-    <main className="bg-kallos-black min-h-screen">
+    <main className="bg-background min-h-screen">
       <Header />
 
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
@@ -82,7 +82,7 @@ export default function WishlistPage() {
           ) : isLoading ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="aspect-[3/4] bg-kallos-charcoal animate-pulse" />
+                <div key={i} className="aspect-3/4 bg-kallos-charcoal animate-pulse" />
               ))}
             </div>
           ) : items.length === 0 ? (
@@ -111,7 +111,7 @@ export default function WishlistPage() {
                     transition={{ delay: index * 0.08 }}
                     className="group"
                   >
-                    <div className="relative aspect-[3/4] bg-kallos-charcoal overflow-hidden mb-4">
+                    <div className="relative aspect-3/4 bg-kallos-charcoal overflow-hidden mb-4">
                       <Image
                         src={imageUrl}
                         alt={product.name}
@@ -122,7 +122,8 @@ export default function WishlistPage() {
                       {/* Remove from wishlist */}
                       <button
                         onClick={() => toggleMutation.mutate(product.id)}
-                        className="absolute top-4 right-4 w-8 h-8 bg-kallos-black/60 flex items-center justify-center hover:bg-kallos-black transition-colors"
+                        aria-label={`Remove ${product.name} from wishlist`}
+                        className="absolute top-4 right-4 w-11 h-11 bg-kallos-black/60 flex items-center justify-center hover:bg-kallos-black transition-colors"
                       >
                         <Heart className="w-4 h-4 fill-kallos-gold text-kallos-gold" />
                       </button>

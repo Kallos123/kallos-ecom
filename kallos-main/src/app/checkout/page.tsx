@@ -244,7 +244,7 @@ export default function CheckoutPage() {
 
   if (!user) {
     return (
-      <main className="bg-kallos-black min-h-screen">
+      <main className="bg-background min-h-screen">
         <Header />
         <div className="pt-40 text-center">
           <p className="text-kallos-warm-grey mb-6">Please sign in to checkout</p>
@@ -258,7 +258,7 @@ export default function CheckoutPage() {
 
   if (!cart?.items.length) {
     return (
-      <main className="bg-kallos-black min-h-screen">
+      <main className="bg-background min-h-screen">
         <Header />
         <div className="pt-40 text-center">
           <p className="text-kallos-warm-grey mb-6">Your cart is empty</p>
@@ -271,7 +271,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <main className="bg-kallos-black min-h-screen">
+    <main className="bg-background min-h-screen">
       <Header />
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -323,16 +323,37 @@ export default function CheckoutPage() {
 
                 {showAddAddr && (
                   <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="mt-4 bg-kallos-charcoal p-6 space-y-5">
-                    <div className="grid grid-cols-2 gap-5">
-                      <div><label className={labelCls}>Full Name</label><input className={inputCls} value={addrForm.fullName} onChange={setAddr('fullName')} required /></div>
-                      <div><label className={labelCls}>Phone</label><input className={inputCls} value={addrForm.phone} onChange={setAddr('phone')} required placeholder="10-digit" /></div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="checkout-full-name" className={labelCls}>Full Name</label>
+                        <input id="checkout-full-name" className={inputCls} value={addrForm.fullName} onChange={setAddr('fullName')} required />
+                      </div>
+                      <div>
+                        <label htmlFor="checkout-phone" className={labelCls}>Phone</label>
+                        <input id="checkout-phone" className={inputCls} value={addrForm.phone} onChange={setAddr('phone')} required placeholder="10-digit" />
+                      </div>
                     </div>
-                    <div><label className={labelCls}>Address Line 1</label><input className={inputCls} value={addrForm.addressLine1} onChange={setAddr('addressLine1')} required /></div>
-                    <div><label className={labelCls}>Address Line 2 (optional)</label><input className={inputCls} value={addrForm.addressLine2} onChange={setAddr('addressLine2')} /></div>
-                    <div className="grid grid-cols-3 gap-5">
-                      <div><label className={labelCls}>City</label><input className={inputCls} value={addrForm.city} onChange={setAddr('city')} required /></div>
-                      <div><label className={labelCls}>State</label><input className={inputCls} value={addrForm.state} onChange={setAddr('state')} required /></div>
-                      <div><label className={labelCls}>Pincode</label><input className={inputCls} value={addrForm.pincode} onChange={setAddr('pincode')} required maxLength={6} /></div>
+                    <div>
+                      <label htmlFor="checkout-address-line1" className={labelCls}>Address Line 1</label>
+                      <input id="checkout-address-line1" className={inputCls} value={addrForm.addressLine1} onChange={setAddr('addressLine1')} required />
+                    </div>
+                    <div>
+                      <label htmlFor="checkout-address-line2" className={labelCls}>Address Line 2 (optional)</label>
+                      <input id="checkout-address-line2" className={inputCls} value={addrForm.addressLine2} onChange={setAddr('addressLine2')} />
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                      <div>
+                        <label htmlFor="checkout-city" className={labelCls}>City</label>
+                        <input id="checkout-city" className={inputCls} value={addrForm.city} onChange={setAddr('city')} required />
+                      </div>
+                      <div>
+                        <label htmlFor="checkout-state" className={labelCls}>State</label>
+                        <input id="checkout-state" className={inputCls} value={addrForm.state} onChange={setAddr('state')} required />
+                      </div>
+                      <div>
+                        <label htmlFor="checkout-pincode" className={labelCls}>Pincode</label>
+                        <input id="checkout-pincode" className={inputCls} value={addrForm.pincode} onChange={setAddr('pincode')} required maxLength={6} />
+                      </div>
                     </div>
                     <button
                       onClick={() => addAddressMutation.mutate()}
@@ -369,7 +390,9 @@ export default function CheckoutPage() {
                   </div>
                 ) : (
                   <div className="flex gap-3">
+                    <label htmlFor="coupon-code" className="sr-only">Coupon code</label>
                     <input
+                      id="coupon-code"
                       className="flex-1 bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm uppercase tracking-widest"
                       placeholder="Enter code"
                       value={couponInput}
@@ -443,7 +466,7 @@ export default function CheckoutPage() {
 
             {/* Right — summary */}
             <div>
-              <div className="sticky top-32 bg-kallos-charcoal p-8 space-y-6">
+              <div className="bg-kallos-charcoal p-8 space-y-6 lg:sticky lg:top-32">
                 <h2 className="font-editorial text-xl text-kallos-ivory">Order Summary</h2>
 
                 {/* Cart items */}
@@ -452,7 +475,7 @@ export default function CheckoutPage() {
                     const price = Number(item.variant.price ?? item.variant.product.basePrice);
                     return (
                       <div key={item.id} className="flex gap-3">
-                        <div className="w-14 h-18 flex-shrink-0 bg-kallos-black overflow-hidden">
+                        <div className="w-14 h-18 shrink-0 bg-kallos-black overflow-hidden">
                           {item.variant.product.images[0]?.url && (
                             <img src={item.variant.product.images[0].url} alt="" className="w-full h-full object-cover" />
                           )}
@@ -464,7 +487,7 @@ export default function CheckoutPage() {
                           )}
                           <p className="text-kallos-warm-grey text-xs mt-0.5">×{item.quantity}</p>
                         </div>
-                        <p className="text-kallos-ivory text-xs flex-shrink-0">{formatPrice(price * item.quantity)}</p>
+                        <p className="text-kallos-ivory text-xs shrink-0">{formatPrice(price * item.quantity)}</p>
                       </div>
                     );
                   })}

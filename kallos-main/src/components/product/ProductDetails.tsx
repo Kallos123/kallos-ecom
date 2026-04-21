@@ -113,7 +113,7 @@ export function ProductDetails({ product }: { product: Product }) {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="relative aspect-[3/4] bg-kallos-charcoal overflow-hidden"
+              className="relative aspect-3/4 bg-kallos-charcoal overflow-hidden"
             >
               <Image
                 src={sortedImages[selectedImage]?.url || FALLBACK}
@@ -131,7 +131,8 @@ export function ProductDetails({ product }: { product: Product }) {
                   <button
                     key={img.id}
                     onClick={() => setSelectedImage(idx)}
-                    className={`relative w-20 h-24 flex-shrink-0 overflow-hidden border-2 transition-colors ${
+                    aria-label={`View image ${idx + 1} of ${product.name}`}
+                    className={`relative w-20 h-24 shrink-0 overflow-hidden border-2 transition-colors ${
                       selectedImage === idx ? 'border-kallos-gold' : 'border-transparent'
                     }`}
                   >
@@ -210,6 +211,7 @@ export function ProductDetails({ product }: { product: Product }) {
                           key={size}
                           onClick={() => variant && setSelectedVariant(variant)}
                           disabled={!hasStock}
+                          aria-label={`Select size ${size}`}
                           className={`w-12 h-12 border text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
                             isSelected
                               ? 'border-kallos-gold text-kallos-gold'
@@ -235,6 +237,7 @@ export function ProductDetails({ product }: { product: Product }) {
                         <button
                           key={color}
                           onClick={() => variant && setSelectedVariant(variant)}
+                          aria-label={`Select color ${color}`}
                           className={`px-4 py-2 border text-sm transition-all ${
                             isSelected
                               ? 'border-kallos-gold text-kallos-gold'
@@ -254,14 +257,16 @@ export function ProductDetails({ product }: { product: Product }) {
                 <div className="flex items-center gap-4">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-10 h-10 border border-kallos-ivory/20 flex items-center justify-center text-kallos-ivory hover:border-kallos-ivory/40 transition-colors"
+                    aria-label="Decrease quantity"
+                    className="w-11 h-11 border border-kallos-ivory/20 flex items-center justify-center text-kallos-ivory hover:border-kallos-ivory/40 transition-colors"
                   >
                     <Minus className="w-4 h-4" />
                   </button>
                   <span className="w-12 text-center text-kallos-ivory">{quantity}</span>
                   <button
                     onClick={() => setQuantity(Math.min(selectedVariant?.stock ?? 10, quantity + 1))}
-                    className="w-10 h-10 border border-kallos-ivory/20 flex items-center justify-center text-kallos-ivory hover:border-kallos-ivory/40 transition-colors"
+                    aria-label="Increase quantity"
+                    className="w-11 h-11 border border-kallos-ivory/20 flex items-center justify-center text-kallos-ivory hover:border-kallos-ivory/40 transition-colors"
                   >
                     <Plus className="w-4 h-4" />
                   </button>
@@ -287,6 +292,7 @@ export function ProductDetails({ product }: { product: Product }) {
                 )}
                 <button
                   onClick={() => user && wishlistMutation.mutate()}
+                  aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
                   className={`w-14 h-14 border flex items-center justify-center transition-colors ${
                     isWishlisted
                       ? 'border-kallos-gold text-kallos-gold'

@@ -93,15 +93,15 @@ export default function AddressesPage() {
             {editing ? 'Edit Address' : 'New Address'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div><label className={labelCls}>Full Name</label><input className={inputCls} value={form.fullName} onChange={set('fullName')} required placeholder="As on ID" /></div>
-            <div><label className={labelCls}>Phone</label><input className={inputCls} value={form.phone} onChange={set('phone')} required placeholder="10-digit mobile" /></div>
+            <div><label htmlFor="address-full-name" className={labelCls}>Full Name</label><input id="address-full-name" className={inputCls} value={form.fullName} onChange={set('fullName')} required placeholder="As on ID" /></div>
+            <div><label htmlFor="address-phone" className={labelCls}>Phone</label><input id="address-phone" className={inputCls} value={form.phone} onChange={set('phone')} required placeholder="10-digit mobile" /></div>
           </div>
-          <div><label className={labelCls}>Address Line 1</label><input className={inputCls} value={form.addressLine1} onChange={set('addressLine1')} required placeholder="House / Flat / Building" /></div>
-          <div><label className={labelCls}>Address Line 2 (optional)</label><input className={inputCls} value={form.addressLine2} onChange={set('addressLine2')} placeholder="Area / Landmark" /></div>
+          <div><label htmlFor="address-line1" className={labelCls}>Address Line 1</label><input id="address-line1" className={inputCls} value={form.addressLine1} onChange={set('addressLine1')} required placeholder="House / Flat / Building" /></div>
+          <div><label htmlFor="address-line2" className={labelCls}>Address Line 2 (optional)</label><input id="address-line2" className={inputCls} value={form.addressLine2} onChange={set('addressLine2')} placeholder="Area / Landmark" /></div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            <div><label className={labelCls}>City</label><input className={inputCls} value={form.city} onChange={set('city')} required /></div>
-            <div><label className={labelCls}>State</label><input className={inputCls} value={form.state} onChange={set('state')} required /></div>
-            <div><label className={labelCls}>Pincode</label><input className={inputCls} value={form.pincode} onChange={set('pincode')} required placeholder="6 digits" maxLength={6} /></div>
+            <div><label htmlFor="address-city" className={labelCls}>City</label><input id="address-city" className={inputCls} value={form.city} onChange={set('city')} required /></div>
+            <div><label htmlFor="address-state" className={labelCls}>State</label><input id="address-state" className={inputCls} value={form.state} onChange={set('state')} required /></div>
+            <div><label htmlFor="address-pincode" className={labelCls}>Pincode</label><input id="address-pincode" className={inputCls} value={form.pincode} onChange={set('pincode')} required placeholder="6 digits" maxLength={6} /></div>
           </div>
           <label className="flex items-center gap-3 cursor-pointer">
             <input type="checkbox" checked={form.isDefault} onChange={set('isDefault')} className="accent-kallos-gold" />
@@ -138,16 +138,29 @@ export default function AddressesPage() {
                   <p className="text-kallos-warm-grey">{addr.city}, {addr.state} — {addr.pincode}</p>
                   <p className="text-kallos-warm-grey">{addr.phone}</p>
                 </div>
-                <div className="flex gap-3 flex-shrink-0">
+                <div className="flex gap-3 shrink-0">
                   {!addr.isDefault && (
-                    <button onClick={() => defaultMutation.mutate(addr.id)} title="Set as default" className="text-kallos-warm-grey hover:text-kallos-gold transition-colors">
+                    <button
+                      onClick={() => defaultMutation.mutate(addr.id)}
+                      aria-label={`Set ${addr.fullName}'s address as default`}
+                      className="h-11 w-11 flex items-center justify-center text-kallos-warm-grey hover:text-kallos-gold transition-colors"
+                    >
                       <Star className="w-4 h-4" />
                     </button>
                   )}
-                  <button onClick={() => openEdit(addr)} className="text-kallos-warm-grey hover:text-kallos-ivory transition-colors">
+                  <button
+                    onClick={() => openEdit(addr)}
+                    aria-label={`Edit address for ${addr.fullName}`}
+                    className="h-11 w-11 flex items-center justify-center text-kallos-warm-grey hover:text-kallos-ivory transition-colors"
+                  >
                     <Pencil className="w-4 h-4" />
                   </button>
-                  <button onClick={() => deleteMutation.mutate(addr.id)} disabled={deleteMutation.isPending} className="text-kallos-warm-grey hover:text-red-400 transition-colors">
+                  <button
+                    onClick={() => deleteMutation.mutate(addr.id)}
+                    aria-label={`Delete address for ${addr.fullName}`}
+                    disabled={deleteMutation.isPending}
+                    className="h-11 w-11 flex items-center justify-center text-kallos-warm-grey hover:text-red-400 transition-colors"
+                  >
                     <Trash2 className="w-4 h-4" />
                   </button>
                 </div>

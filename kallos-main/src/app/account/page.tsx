@@ -56,23 +56,23 @@ export default function ProfilePage() {
 
       {tab === 'profile' ? (
         <form onSubmit={e => { e.preventDefault(); setProfileMsg(''); profileMutation.mutate(); }} className="space-y-6 max-w-md">
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className={labelCls}>First Name</label>
-              <input className={inputCls} value={form.firstName} onChange={e => setForm(p => ({ ...p, firstName: e.target.value }))} required />
+              <label htmlFor="profile-first-name" className={labelCls}>First Name</label>
+              <input id="profile-first-name" className={inputCls} value={form.firstName} onChange={e => setForm(p => ({ ...p, firstName: e.target.value }))} required />
             </div>
             <div>
-              <label className={labelCls}>Last Name</label>
-              <input className={inputCls} value={form.lastName} onChange={e => setForm(p => ({ ...p, lastName: e.target.value }))} required />
+              <label htmlFor="profile-last-name" className={labelCls}>Last Name</label>
+              <input id="profile-last-name" className={inputCls} value={form.lastName} onChange={e => setForm(p => ({ ...p, lastName: e.target.value }))} required />
             </div>
           </div>
           <div>
-            <label className={labelCls}>Phone</label>
-            <input className={inputCls} value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} placeholder="10-digit mobile number" />
+            <label htmlFor="profile-phone" className={labelCls}>Phone</label>
+            <input id="profile-phone" className={inputCls} value={form.phone} onChange={e => setForm(p => ({ ...p, phone: e.target.value }))} placeholder="10-digit mobile number" />
           </div>
           <div>
-            <label className={labelCls}>Email</label>
-            <input className={inputCls} value={user?.email} disabled style={{ opacity: 0.4 }} />
+            <label htmlFor="profile-email" className={labelCls}>Email</label>
+            <input id="profile-email" className={`${inputCls} opacity-40`} value={user?.email} disabled />
           </div>
           {profileMsg && <p className={`text-xs ${profileMsg.includes('updated') ? 'text-green-400' : 'text-red-400'}`}>{profileMsg}</p>}
           <button type="submit" disabled={profileMutation.isPending} className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50">
@@ -88,16 +88,16 @@ export default function ProfilePage() {
           pwMutation.mutate();
         }} className="space-y-6 max-w-md">
           <div>
-            <label className={labelCls}>Current Password</label>
-            <input type="password" className={inputCls} value={pw.currentPassword} onChange={e => setPw(p => ({ ...p, currentPassword: e.target.value }))} required />
+            <label htmlFor="profile-current-password" className={labelCls}>Current Password</label>
+            <input id="profile-current-password" type="password" className={inputCls} value={pw.currentPassword} onChange={e => setPw(p => ({ ...p, currentPassword: e.target.value }))} required />
           </div>
           <div>
-            <label className={labelCls}>New Password</label>
-            <input type="password" className={inputCls} value={pw.newPassword} onChange={e => setPw(p => ({ ...p, newPassword: e.target.value }))} required placeholder="Min. 8 characters" />
+            <label htmlFor="profile-new-password" className={labelCls}>New Password</label>
+            <input id="profile-new-password" type="password" className={inputCls} value={pw.newPassword} onChange={e => setPw(p => ({ ...p, newPassword: e.target.value }))} required placeholder="Min. 8 characters" />
           </div>
           <div>
-            <label className={labelCls}>Confirm New Password</label>
-            <input type="password" className={inputCls} value={pw.confirm} onChange={e => setPw(p => ({ ...p, confirm: e.target.value }))} required />
+            <label htmlFor="profile-confirm-password" className={labelCls}>Confirm New Password</label>
+            <input id="profile-confirm-password" type="password" className={inputCls} value={pw.confirm} onChange={e => setPw(p => ({ ...p, confirm: e.target.value }))} required />
           </div>
           {pwMsg && <p className={`text-xs ${pwMsg.includes('changed') ? 'text-green-400' : 'text-red-400'}`}>{pwMsg}</p>}
           <button type="submit" disabled={pwMutation.isPending} className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50">

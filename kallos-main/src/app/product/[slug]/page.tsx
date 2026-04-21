@@ -28,7 +28,7 @@ export default async function ProductPage({ params }: Props) {
   if (!product) notFound();
 
   return (
-    <main className="bg-kallos-black min-h-screen">
+    <main className="bg-background min-h-screen">
       <Header />
       <ProductDetails product={product} />
       <Footer />

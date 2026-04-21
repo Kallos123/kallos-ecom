@@ -99,7 +99,7 @@ export default function RegisterPage() {
           <h1 className="font-editorial text-4xl text-kallos-ivory mb-10">Register</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-[10px] tracking-[0.3em] text-kallos-ivory/60 uppercase mb-2">
                   First Name

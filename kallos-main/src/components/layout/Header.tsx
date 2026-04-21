@@ -55,7 +55,7 @@ function ThemeToggle({ className }: { className?: string }) {
 
   if (!mounted) {
     return (
-      <div className={cn("size-9 rounded-full bg-muted/50", className)} aria-hidden />
+      <div className={cn("size-11 rounded-full bg-muted/50", className)} aria-hidden />
     );
   }
 
@@ -66,7 +66,7 @@ function ThemeToggle({ className }: { className?: string }) {
       size="icon"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       className={cn(
-        "size-9 rounded-full text-foreground/60 hover:bg-foreground/8 hover:text-foreground",
+        "size-11 rounded-full text-foreground/60 hover:bg-foreground/8 hover:text-foreground",
         className
       )}
       aria-label="Toggle theme"
@@ -129,6 +129,7 @@ function NavLink({
     <Link
       href={href}
       onClick={onClick}
+      aria-current={active ? "page" : undefined}
       className={cn(
         "rounded-lg px-2.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.28em] transition-[color,background-color] duration-200",
         active
@@ -202,7 +203,7 @@ function NavIconButton({
   );
 
   const className =
-    "relative size-9 rounded-full text-foreground/55 transition-colors duration-200 hover:bg-foreground/8 hover:text-foreground";
+    "relative size-11 rounded-full text-foreground/55 transition-colors duration-200 hover:bg-foreground/8 hover:text-foreground";
 
   const button = href ? (
     <Button variant="ghost" size="icon" className={className} asChild aria-label={label}>
@@ -297,6 +298,17 @@ export function Header() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!searchOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSearchOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [searchOpen]);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -328,7 +340,7 @@ export function Header() {
                 : "shadow-lg shadow-black/8 dark:shadow-black/30"
             )}
           >
-            <div className="relative flex h-14 items-center gap-2 px-3 sm:h-[3.75rem] sm:gap-3 sm:px-5 lg:px-6">
+            <div className="relative flex h-14 items-center gap-2 px-3 sm:h-15 sm:gap-3 sm:px-5 lg:px-6">
               <Suspense
                 fallback={<div className="hidden min-h-8 min-w-0 flex-1 lg:flex" aria-hidden />}
               >
@@ -411,8 +423,10 @@ export function Header() {
                     variant="ghost"
                     size="icon"
                     data-mobile-nav-toggle
-                    className="size-9 rounded-full text-foreground/70 hover:bg-foreground/8"
+                    className="size-11 rounded-full text-foreground/70 hover:bg-foreground/8"
                     aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={mobileMenuOpen}
+                    aria-controls="mobile-nav-menu"
                     onClick={() => setMobileMenuOpen((o) => !o)}
                   >
                     {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -430,6 +444,7 @@ export function Header() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={reduceMotion ? undefined : { opacity: 0, y: -8, scale: 0.99 }}
                   transition={{ duration: reduceMotion ? 0 : 0.26, ease: easeOutQuart }}
+                  id="mobile-nav-menu"
                   className="overflow-hidden rounded-2xl border border-foreground/10 bg-background/95 shadow-xl ring-1 ring-black/5 dark:border-white/10 dark:ring-white/10"
                 >
                 <div className="flex flex-col px-4 py-3">
@@ -519,6 +534,9 @@ export function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
               transition={{ duration: reduceMotion ? 0 : 0.22, ease: easeOutQuart }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="site-search-heading"
               className="mx-auto mt-20 max-w-xl px-4"
               onClick={(e) => e.stopPropagation()}
             >
@@ -526,11 +544,16 @@ export function Header() {
                 onSubmit={handleSearch}
                 className="flex gap-2 rounded-2xl border border-foreground/10 bg-background/95 p-4 shadow-2xl ring-1 ring-black/5 dark:border-white/10 dark:ring-white/10"
               >
+                <h2 id="site-search-heading" className="sr-only">
+                  Search products
+                </h2>
                 <input
+                  id="site-search-input"
                   type="search"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search products..."
+                  aria-label="Search products"
                   className="min-w-0 flex-1 border-0 bg-transparent px-2 py-2 text-sm outline-none placeholder:text-muted-foreground"
                   autoFocus
                 />

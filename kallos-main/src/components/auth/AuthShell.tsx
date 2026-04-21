@@ -25,7 +25,7 @@ export function AuthShell({
   footer,
 }: AuthShellProps) {
   return (
-    <main className="min-h-screen bg-kallos-black flex">
+    <main className="min-h-screen bg-background flex">
       <div className="hidden lg:block lg:w-1/2 relative overflow-hidden">
         <img
           src={imageUrl}
@@ -62,15 +62,15 @@ export function AuthShell({
         >
           <Link
             href="/"
-            className="block font-editorial text-2xl tracking-[0.3em] text-kallos-ivory mb-16"
+            className="block font-editorial text-2xl tracking-[0.3em] text-foreground mb-16"
           >
             KALLOS
           </Link>
 
           <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">{eyebrow}</p>
-          <h1 className="font-editorial text-4xl text-kallos-ivory mb-4">{title}</h1>
+          <h1 className="font-editorial text-4xl text-foreground mb-4">{title}</h1>
           {description && (
-            <p className="text-kallos-ivory/50 text-sm leading-relaxed mb-10">{description}</p>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-10">{description}</p>
           )}
 
           {children}

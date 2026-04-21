@@ -27,28 +27,28 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
 
   if (isLoading || !user) {
     return (
-      <main className="bg-kallos-black min-h-screen">
+      <main className="bg-background min-h-screen">
         <Header />
         <div className="pt-40 text-center">
-          <p className="text-kallos-warm-grey text-xs tracking-widest uppercase">Loading...</p>
+          <p className="text-muted-foreground text-xs tracking-widest uppercase">Loading...</p>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="bg-kallos-black min-h-screen">
+    <main className="bg-background min-h-screen">
       <Header />
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
             {/* Sidebar */}
-            <aside className="lg:w-56 flex-shrink-0">
+            <aside className="lg:w-56 shrink-0">
               <div className="mb-8">
-                <p className="font-editorial text-2xl text-kallos-ivory">
+                <p className="font-editorial text-2xl text-foreground">
                   {user.firstName} {user.lastName}
                 </p>
-                <p className="text-kallos-warm-grey text-xs mt-1">{user.email}</p>
+                <p className="text-muted-foreground text-xs mt-1">{user.email}</p>
               </div>
               <nav className="space-y-1">
                 {nav.map(({ label, href, icon: Icon, exact }) => {
@@ -59,8 +59,8 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
                       href={href}
                       className={`flex items-center gap-3 px-4 py-3 text-xs tracking-[0.15em] uppercase transition-colors ${
                         isActive
-                          ? 'text-kallos-gold border-l border-kallos-gold pl-3'
-                          : 'text-kallos-ivory/60 hover:text-kallos-ivory border-l border-transparent pl-3'
+                          ? 'text-foreground border-l border-kallos-gold pl-3'
+                          : 'text-muted-foreground hover:text-foreground border-l border-transparent pl-3'
                       }`}
                     >
                       <Icon className="w-4 h-4" />
@@ -70,7 +70,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
                 })}
                 <button
                   onClick={() => { logout(); router.push('/'); }}
-                  className="flex items-center gap-3 px-4 py-3 text-xs tracking-[0.15em] uppercase text-kallos-ivory/40 hover:text-kallos-ivory transition-colors border-l border-transparent pl-3 w-full"
+                  className="flex items-center gap-3 px-4 py-3 text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors border-l border-transparent pl-3 w-full"
                 >
                   <LogOut className="w-4 h-4" />
                   Sign Out

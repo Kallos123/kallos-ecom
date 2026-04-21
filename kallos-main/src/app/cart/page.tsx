@@ -61,7 +61,7 @@ export default function CartPage() {
   const subtotal = cart?.subtotal ?? 0;
 
   return (
-    <main className="bg-kallos-black min-h-screen">
+    <main className="bg-background min-h-screen">
       <Header />
 
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
@@ -118,7 +118,7 @@ export default function CartPage() {
                       transition={{ delay: index * 0.08 }}
                       className="flex gap-6 p-6 bg-kallos-charcoal"
                     >
-                      <div className="relative w-24 h-32 flex-shrink-0 bg-kallos-black overflow-hidden">
+                      <div className="relative w-24 h-32 shrink-0 bg-kallos-black overflow-hidden">
                         {imageUrl ? (
                           <Image src={imageUrl} alt={product.name} fill className="object-cover" sizes="96px" />
                         ) : (
@@ -152,21 +152,24 @@ export default function CartPage() {
                                   removeMutation.mutate(item.id);
                                 }
                               }}
-                              className="w-8 h-8 border border-kallos-ivory/20 flex items-center justify-center text-kallos-ivory hover:border-kallos-ivory/40 transition-colors"
+                              aria-label={`Decrease quantity for ${product.name}`}
+                              className="w-11 h-11 border border-kallos-ivory/20 flex items-center justify-center text-kallos-ivory hover:border-kallos-ivory/40 transition-colors"
                             >
                               <Minus className="w-3 h-3" />
                             </button>
                             <span className="w-8 text-center text-kallos-ivory text-sm">{item.quantity}</span>
                             <button
                               onClick={() => updateMutation.mutate({ itemId: item.id, quantity: item.quantity + 1 })}
-                              className="w-8 h-8 border border-kallos-ivory/20 flex items-center justify-center text-kallos-ivory hover:border-kallos-ivory/40 transition-colors"
+                              aria-label={`Increase quantity for ${product.name}`}
+                              className="w-11 h-11 border border-kallos-ivory/20 flex items-center justify-center text-kallos-ivory hover:border-kallos-ivory/40 transition-colors"
                             >
                               <Plus className="w-3 h-3" />
                             </button>
                           </div>
                           <button
                             onClick={() => removeMutation.mutate(item.id)}
-                            className="text-kallos-warm-grey hover:text-kallos-ivory transition-colors"
+                            aria-label={`Remove ${product.name} from cart`}
+                            className="h-11 w-11 flex items-center justify-center text-kallos-warm-grey hover:text-kallos-ivory transition-colors"
                           >
                             <Trash2 className="w-4 h-4" />
                           </button>
@@ -179,7 +182,7 @@ export default function CartPage() {
 
               {/* Summary */}
               <div className="lg:col-span-1">
-                <div className="sticky top-32 bg-kallos-charcoal p-8">
+                <div className="bg-kallos-charcoal p-8 lg:sticky lg:top-32">
                   <h2 className="font-editorial text-xl text-kallos-ivory mb-6">Order Summary</h2>
 
                   <div className="space-y-3 mb-6 text-sm">

@@ -58,7 +58,7 @@ function ShopContent() {
           <p className="text-xs tracking-[0.4em] text-kallos-gold mb-4 uppercase">
             {categoryName || 'All Products'}
           </p>
-          <h1 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-kallos-ivory tracking-wide">
+          <h1 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide">
             {title}
           </h1>
         </div>
@@ -68,7 +68,7 @@ function ShopContent() {
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mt-12">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="aspect-[3/4] bg-kallos-charcoal animate-pulse" />
+              <div key={i} className="aspect-3/4 bg-card animate-pulse" />
             ))}
           </div>
         ) : (
@@ -81,7 +81,7 @@ function ShopContent() {
 
         {!isLoading && products.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-kallos-warm-grey text-lg">No products found</p>
+            <p className="text-muted-foreground text-lg">No products found</p>
           </div>
         )}
       </div>
@@ -91,7 +91,7 @@ function ShopContent() {
 
 export default function ShopPage() {
   return (
-    <main className="bg-kallos-black min-h-screen">
+    <main className="bg-background min-h-screen">
       <Header />
       <Suspense fallback={null}>
         <ShopContent />
