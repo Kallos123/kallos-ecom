@@ -41,11 +41,11 @@ export default function ReturnsPage() {
 
   return (
     <div>
-      <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">History</p>
+      <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">History</p>
       <h1 className="font-editorial text-4xl text-kallos-ivory mb-4">My Returns</h1>
       <p className="text-kallos-warm-grey text-xs mb-10">
         To request a return, go to your{' '}
-        <Link href="/account/orders" className="text-kallos-ivory hover:text-kallos-gold transition-colors underline">
+        <Link href="/account/orders" className="text-kallos-ivory hover:text-kallos-crimson transition-colors underline">
           order detail page
         </Link>{' '}
         within 7 days of delivery.
@@ -64,7 +64,7 @@ export default function ReturnsPage() {
             <div key={ret.id} className="bg-kallos-charcoal p-6">
               <div className="flex items-start justify-between gap-4 mb-3">
                 <div>
-                  <Link href={`/account/orders/${ret.order.id}`} className="text-kallos-ivory text-sm hover:text-kallos-gold transition-colors">
+                  <Link href={`/account/orders/${ret.order.id}`} className="text-kallos-ivory text-sm hover:text-kallos-crimson transition-colors">
                     {ret.order.orderNumber}
                   </Link>
                   <p className="text-kallos-warm-grey text-xs mt-0.5">

@@ -46,7 +46,7 @@ export default function LoginPage() {
             className="font-editorial text-5xl text-kallos-ivory leading-tight mb-4"
           >
             Timeless<br />
-            <span className="italic text-kallos-gold">Elegance</span>
+            <span className="italic text-kallos-crimson">Elegance</span>
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
@@ -74,7 +74,7 @@ export default function LoginPage() {
             KALLOS
           </Link>
 
-          <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">Welcome back</p>
+          <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">Welcome back</p>
           <h1 className="font-editorial text-4xl text-kallos-ivory mb-10">Sign In</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -88,7 +88,7 @@ export default function LoginPage() {
                 onChange={e => setEmail(e.target.value)}
                 required
                 autoComplete="email"
-                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
                 placeholder="your@email.com"
               />
             </div>
@@ -103,7 +103,7 @@ export default function LoginPage() {
                 onChange={e => setPassword(e.target.value)}
                 required
                 autoComplete="current-password"
-                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
                 placeholder="••••••••"
               />
             </div>
@@ -111,7 +111,7 @@ export default function LoginPage() {
             <div className="flex justify-end">
               <Link
                 href="/forgot-password"
-                className="text-[10px] tracking-[0.2em] text-kallos-ivory/40 hover:text-kallos-gold transition-colors uppercase"
+                className="text-[10px] tracking-[0.2em] text-kallos-ivory/40 hover:text-kallos-crimson transition-colors uppercase"
               >
                 Forgot password?
               </Link>
@@ -124,7 +124,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors duration-300 disabled:opacity-50 mt-4"
+              className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300 disabled:opacity-50 mt-4"
             >
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
@@ -132,7 +132,7 @@ export default function LoginPage() {
 
           <p className="mt-10 text-kallos-ivory/40 text-xs tracking-wide text-center">
             New to KALLOS?{' '}
-            <Link href="/register" className="text-kallos-ivory hover:text-kallos-gold transition-colors">
+            <Link href="/register" className="text-kallos-ivory hover:text-kallos-crimson transition-colors">
               Create an account
             </Link>
           </p>

@@ -62,7 +62,7 @@ export function HeroSection() {
         >
           <div className="mb-10 flex items-start gap-6 lg:gap-8">
             <div
-              className="mt-1 hidden h-24 w-px shrink-0 bg-gradient-to-b from-kallos-gold/70 via-kallos-gold/25 to-transparent sm:block dark:from-kallos-gold/50 dark:via-kallos-gold/15"
+              className="mt-1 hidden h-24 w-px shrink-0 bg-gradient-to-b from-kallos-crimson/70 via-kallos-crimson/25 to-transparent sm:block dark:from-kallos-crimson/50 dark:via-kallos-crimson/15"
               aria-hidden
             />
             <div className="min-w-0 flex-1">

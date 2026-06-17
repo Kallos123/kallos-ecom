@@ -22,18 +22,18 @@ export function EditorialSection() {
           <motion.div style={{ y: imageY }} className="relative">
             <div className="aspect-[4/5] relative overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1200"
+                src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&q=90"
                 alt="Editorial"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 border border-kallos-gold/30" />
+            <div className="absolute -bottom-6 -right-6 w-48 h-48 border border-kallos-crimson/30" />
           </motion.div>
 
           <motion.div style={{ y: textY }} className="lg:pl-12">
-            <p className="text-xs tracking-[0.4em] text-kallos-gold mb-6 uppercase">
+            <p className="text-xs tracking-[0.4em] text-kallos-crimson mb-6 uppercase">
               Our Philosophy
             </p>
             <h2 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-foreground tracking-wide mb-8">
@@ -58,7 +58,7 @@ export function EditorialSection() {
               className="inline-flex items-center gap-4 mt-10 text-foreground text-xs tracking-[0.2em] uppercase group"
             >
               <span>Learn More</span>
-              <span className="w-8 h-px bg-kallos-gold transform group-hover:w-12 transition-all duration-500" />
+              <span className="w-8 h-px bg-kallos-crimson transform group-hover:w-12 transition-all duration-500" />
             </Link>
           </motion.div>
         </div>

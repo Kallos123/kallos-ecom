@@ -61,7 +61,7 @@ export async function openRazorpayCheckout({
     description: `Order ${order.orderNumber}`,
     order_id: order.razorpayOrderId,
     prefill,
-    theme: { color: '#B4975A' },
+    theme: { color: '#9f1239' },
     handler: async (response: any) => {
       await api.post('/payments/verify', {
         razorpayOrderId: response.razorpay_order_id,

@@ -59,7 +59,7 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
                       href={href}
                       className={`flex items-center gap-3 px-4 py-3 text-xs tracking-[0.15em] uppercase transition-colors ${
                         isActive
-                          ? 'text-foreground border-l border-kallos-gold pl-3'
+                          ? 'text-foreground border-l border-kallos-crimson pl-3'
                           : 'text-muted-foreground hover:text-foreground border-l border-transparent pl-3'
                       }`}
                     >

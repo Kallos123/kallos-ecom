@@ -63,12 +63,12 @@ export default function VerifyEmailPage() {
       title={state === 'success' ? 'Email Verified' : state === 'loading' ? 'Verifying Email' : 'Verification Issue'}
       description={message}
       imageUrl="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1200"
-      featureTitle={<>Keep your<br /><span className="italic text-kallos-gold">account trusted</span></>}
+      featureTitle={<>Keep your<br /><span className="italic text-kallos-crimson">account trusted</span></>}
       featureSubtitle="Verification keeps recovery and order updates reliable"
       footer={
         <p className="text-kallos-ivory/40 text-xs tracking-wide text-center">
           Need to sign in first?{' '}
-          <Link href="/login" className="text-kallos-ivory hover:text-kallos-gold transition-colors">
+          <Link href="/login" className="text-kallos-ivory hover:text-kallos-crimson transition-colors">
             Return to sign in
           </Link>
         </p>
@@ -82,7 +82,7 @@ export default function VerifyEmailPage() {
         ) : state === 'success' ? (
           <Link
             href={user ? '/account' : '/login'}
-            className="block w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase text-center hover:bg-kallos-gold transition-colors duration-300"
+            className="block w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase text-center hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300"
           >
             {user ? 'Go to Account' : 'Continue to Sign In'}
           </Link>
@@ -96,7 +96,7 @@ export default function VerifyEmailPage() {
                 type="button"
                 onClick={handleResend}
                 disabled={resending}
-                className="w-full py-4 border border-kallos-gold/40 text-kallos-gold text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold hover:text-kallos-black transition-colors duration-300 disabled:opacity-50"
+                className="w-full py-4 border border-kallos-crimson/40 text-kallos-crimson text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300 disabled:opacity-50"
               >
                 {resending ? 'Sending...' : 'Resend Verification'}
               </button>

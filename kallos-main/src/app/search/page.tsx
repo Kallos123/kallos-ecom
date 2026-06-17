@@ -25,7 +25,7 @@ function SearchContent() {
     <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
       <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
         <div className="mb-16">
-          <p className="text-xs tracking-[0.4em] text-kallos-gold mb-4 uppercase">
+          <p className="text-xs tracking-[0.4em] text-kallos-crimson mb-4 uppercase">
             Search Results
           </p>
           <h1 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-kallos-ivory tracking-wide">

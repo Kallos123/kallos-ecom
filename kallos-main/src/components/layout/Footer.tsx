@@ -43,13 +43,13 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-xs tracking-[0.2em] uppercase mb-6 text-kallos-gold">Shop</h3>
+            <h3 className="text-xs tracking-[0.2em] uppercase mb-6 text-kallos-crimson">Shop</h3>
             <ul className="space-y-3">
               {footerLinks.shop.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-foreground/60 hover:text-kallos-gold transition-colors duration-300"
+                    className="text-sm text-foreground/60 hover:text-kallos-crimson transition-colors duration-300"
                   >
                     {link.name}
                   </Link>
@@ -59,13 +59,13 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-xs tracking-[0.2em] uppercase mb-6 text-kallos-gold">Support</h3>
+            <h3 className="text-xs tracking-[0.2em] uppercase mb-6 text-kallos-crimson">Support</h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-foreground/60 hover:text-kallos-gold transition-colors duration-300"
+                    className="text-sm text-foreground/60 hover:text-kallos-crimson transition-colors duration-300"
                   >
                     {link.name}
                   </Link>
@@ -75,13 +75,13 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-xs tracking-[0.2em] uppercase mb-6 text-kallos-gold">Company</h3>
+            <h3 className="text-xs tracking-[0.2em] uppercase mb-6 text-kallos-crimson">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-foreground/60 hover:text-kallos-gold transition-colors duration-300"
+                    className="text-sm text-foreground/60 hover:text-kallos-crimson transition-colors duration-300"
                   >
                     {link.name}
                   </Link>
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-xs tracking-[0.2em] uppercase mb-6 text-kallos-gold">Newsletter</h3>
+            <h3 className="text-xs tracking-[0.2em] uppercase mb-6 text-kallos-crimson">Newsletter</h3>
             <p className="text-sm text-foreground/60 mb-4">
               Subscribe for exclusive access and updates.
             </p>
@@ -99,7 +99,7 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Email"
-                className="flex-1 bg-transparent border-b border-foreground/20 py-2 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-kallos-gold transition-colors"
+                className="flex-1 bg-transparent border-b border-foreground/20 py-2 text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-kallos-crimson transition-colors"
               />
             </form>
           </div>

@@ -62,7 +62,7 @@ export default function WishlistPage() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-12">
           <div className="mb-16">
-            <p className="text-xs tracking-[0.4em] text-kallos-gold mb-4 uppercase">Saved Items</p>
+            <p className="text-xs tracking-[0.4em] text-kallos-crimson mb-4 uppercase">Saved Items</p>
             <h1 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-kallos-ivory tracking-wide">
               Your Wishlist
             </h1>
@@ -74,7 +74,7 @@ export default function WishlistPage() {
               <p className="text-kallos-warm-grey text-lg mb-4">Sign in to view your wishlist</p>
               <Link
                 href="/login"
-                className="inline-block px-8 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors"
+                className="inline-block px-8 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors"
               >
                 Sign In
               </Link>
@@ -91,7 +91,7 @@ export default function WishlistPage() {
               <p className="text-kallos-warm-grey text-lg mb-8">Your wishlist is empty</p>
               <Link
                 href="/shop"
-                className="inline-block px-8 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors"
+                className="inline-block px-8 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors"
               >
                 Explore Collection
               </Link>
@@ -125,13 +125,13 @@ export default function WishlistPage() {
                         aria-label={`Remove ${product.name} from wishlist`}
                         className="absolute top-4 right-4 w-11 h-11 bg-kallos-black/60 flex items-center justify-center hover:bg-kallos-black transition-colors"
                       >
-                        <Heart className="w-4 h-4 fill-kallos-gold text-kallos-gold" />
+                        <Heart className="w-4 h-4 fill-kallos-crimson text-kallos-crimson" />
                       </button>
                     </div>
 
                     <Link
                       href={`/product/${product.slug}`}
-                      className="font-editorial text-lg text-kallos-ivory hover:text-kallos-gold transition-colors block"
+                      className="font-editorial text-lg text-kallos-ivory hover:text-kallos-crimson transition-colors block"
                     >
                       {product.name}
                     </Link>

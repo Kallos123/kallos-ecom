@@ -52,12 +52,12 @@ export default function ResetPasswordPage() {
       title={completed ? 'Password Updated' : 'Reset Password'}
       description={completed ? 'Your password has been updated. You can sign in with the new one now.' : 'Choose a new password for your KALLOS account.'}
       imageUrl="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1200"
-      featureTitle={<>Restore your<br /><span className="italic text-kallos-gold">account access</span></>}
+      featureTitle={<>Restore your<br /><span className="italic text-kallos-crimson">account access</span></>}
       featureSubtitle="One secure step and you are back in"
       footer={
         <p className="text-kallos-ivory/40 text-xs tracking-wide text-center">
           Remembered it instead?{' '}
-          <Link href="/login" className="text-kallos-ivory hover:text-kallos-gold transition-colors">
+          <Link href="/login" className="text-kallos-ivory hover:text-kallos-crimson transition-colors">
             Return to sign in
           </Link>
         </p>
@@ -66,7 +66,7 @@ export default function ResetPasswordPage() {
       {completed ? (
         <Link
           href="/login"
-          className="block w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase text-center hover:bg-kallos-gold transition-colors duration-300"
+          className="block w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase text-center hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300"
         >
           Go to Sign In
         </Link>
@@ -82,7 +82,7 @@ export default function ResetPasswordPage() {
               onChange={(event) => setPassword(event.target.value)}
               required
               autoComplete="new-password"
-              className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+              className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
               placeholder="At least 8 characters"
             />
           </div>
@@ -97,7 +97,7 @@ export default function ResetPasswordPage() {
               onChange={(event) => setConfirmPassword(event.target.value)}
               required
               autoComplete="new-password"
-              className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+              className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
               placeholder="Repeat your password"
             />
           </div>
@@ -107,7 +107,7 @@ export default function ResetPasswordPage() {
           <button
             type="submit"
             disabled={loading || !token}
-            className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors duration-300 disabled:opacity-50"
+            className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300 disabled:opacity-50"
           >
             {loading ? 'Updating...' : 'Update Password'}
           </button>

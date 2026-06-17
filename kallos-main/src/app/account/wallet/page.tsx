@@ -44,13 +44,13 @@ export default function WalletPage() {
 
   return (
     <div>
-      <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">Balance</p>
+      <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">Balance</p>
       <h1 className="font-editorial text-4xl text-kallos-ivory mb-10">My Wallet</h1>
 
       {/* Balance card */}
       <div className="bg-kallos-charcoal p-8 mb-10 flex items-center gap-6">
         <div className="w-14 h-14 bg-kallos-black flex items-center justify-center flex-shrink-0">
-          <Wallet className="w-6 h-6 text-kallos-gold" />
+          <Wallet className="w-6 h-6 text-kallos-crimson" />
         </div>
         <div>
           <p className="text-kallos-warm-grey text-xs tracking-widest uppercase mb-1">Available Balance</p>

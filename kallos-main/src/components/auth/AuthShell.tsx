@@ -67,7 +67,7 @@ export function AuthShell({
             KALLOS
           </Link>
 
-          <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">{eyebrow}</p>
+          <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">{eyebrow}</p>
           <h1 className="font-editorial text-4xl text-foreground mb-4">{title}</h1>
           {description && (
             <p className="text-muted-foreground text-sm leading-relaxed mb-10">{description}</p>

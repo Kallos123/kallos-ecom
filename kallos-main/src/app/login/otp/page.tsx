@@ -55,18 +55,18 @@ export default function OtpLoginPage() {
       title="Sign In With a Code"
       description={otpRequested ? 'Enter the 6-digit code sent to your email.' : 'We will send a one-time login code to your inbox.'}
       imageUrl="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1200"
-      featureTitle={<>Fast access,<br /><span className="italic text-kallos-gold">no password required</span></>}
+      featureTitle={<>Fast access,<br /><span className="italic text-kallos-crimson">no password required</span></>}
       featureSubtitle="A quicker way back into KALLOS"
       footer={
         <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.22em] text-kallos-ivory/45">
-          <Link href="/login" className="hover:text-kallos-gold transition-colors">
+          <Link href="/login" className="hover:text-kallos-crimson transition-colors">
             Use your password instead
           </Link>
           {otpRequested && (
             <button
               type="button"
               onClick={() => requestOtp(email)}
-              className="hover:text-kallos-gold transition-colors"
+              className="hover:text-kallos-crimson transition-colors"
             >
               Resend code
             </button>
@@ -86,7 +86,7 @@ export default function OtpLoginPage() {
               onChange={(event) => setEmail(event.target.value)}
               required
               autoComplete="email"
-              className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+              className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
               placeholder="your@email.com"
             />
           </div>
@@ -96,7 +96,7 @@ export default function OtpLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors duration-300 disabled:opacity-50"
+            className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300 disabled:opacity-50"
           >
             {loading ? 'Sending...' : 'Send Login Code'}
           </button>
@@ -116,7 +116,7 @@ export default function OtpLoginPage() {
                   <InputOTPSlot
                     key={index}
                     index={index}
-                    className="h-12 w-12 rounded-none border border-kallos-ivory/20 bg-kallos-charcoal text-kallos-ivory first:rounded-none first:border-l last:rounded-none data-[active=true]:border-kallos-gold data-[active=true]:ring-kallos-gold/20"
+                    className="h-12 w-12 rounded-none border border-kallos-ivory/20 bg-kallos-charcoal text-kallos-ivory first:rounded-none first:border-l last:rounded-none data-[active=true]:border-kallos-crimson data-[active=true]:ring-kallos-crimson/20"
                   />
                 ))}
               </InputOTPGroup>
@@ -128,7 +128,7 @@ export default function OtpLoginPage() {
           <button
             type="submit"
             disabled={loading || otp.length !== 6}
-            className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors duration-300 disabled:opacity-50"
+            className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300 disabled:opacity-50"
           >
             {loading ? 'Verifying...' : 'Verify & Sign In'}
           </button>

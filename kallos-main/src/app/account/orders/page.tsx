@@ -45,7 +45,7 @@ export default function OrdersPage() {
 
   return (
     <div>
-      <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">History</p>
+      <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">History</p>
       <h1 className="font-editorial text-4xl text-kallos-ivory mb-10">My Orders</h1>
 
       {isLoading ? (
@@ -56,7 +56,7 @@ export default function OrdersPage() {
         <div className="text-center py-20">
           <ShoppingBag className="w-12 h-12 text-kallos-warm-grey mx-auto mb-4" />
           <p className="text-kallos-warm-grey">No orders yet</p>
-          <Link href="/shop" className="inline-block mt-6 px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors">
+          <Link href="/shop" className="inline-block mt-6 px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors">
             Start Shopping
           </Link>
         </div>
@@ -81,7 +81,7 @@ export default function OrdersPage() {
                 </div>
                 <div className="flex items-center gap-4 flex-shrink-0">
                   <p className="text-kallos-ivory text-sm">{formatPrice(order.totalAmount)}</p>
-                  <ChevronRight className="w-4 h-4 text-kallos-warm-grey group-hover:text-kallos-gold transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-kallos-warm-grey group-hover:text-kallos-crimson transition-colors" />
                 </div>
               </div>
             </Link>

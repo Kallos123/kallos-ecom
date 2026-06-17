@@ -12,7 +12,9 @@
       "Bash(xargs grep:*)",
       "mcp__code-review-graph__list_repos_tool",
       "mcp__code-review-graph__semantic_search_nodes_tool",
-      "mcp__code-review-graph__query_graph_tool"
+      "mcp__code-review-graph__query_graph_tool",
+      "Bash(findstr \"FeaturedProducts\")",
+      "Bash(Select-String \"FeaturedProducts\")"
     ]
   }
 }

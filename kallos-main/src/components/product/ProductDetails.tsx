@@ -133,7 +133,7 @@ export function ProductDetails({ product }: { product: Product }) {
                     onClick={() => setSelectedImage(idx)}
                     aria-label={`View image ${idx + 1} of ${product.name}`}
                     className={`relative w-20 h-24 shrink-0 overflow-hidden border-2 transition-colors ${
-                      selectedImage === idx ? 'border-kallos-gold' : 'border-transparent'
+                      selectedImage === idx ? 'border-kallos-crimson' : 'border-transparent'
                     }`}
                   >
                     <Image
@@ -156,7 +156,7 @@ export function ProductDetails({ product }: { product: Product }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <p className="text-xs tracking-[0.3em] text-kallos-gold uppercase mb-4">
+              <p className="text-xs tracking-[0.3em] text-kallos-crimson uppercase mb-4">
                 {product.subcategory?.name ?? product.category.name}
               </p>
               <h1 className="font-editorial text-4xl lg:text-5xl text-kallos-ivory mb-4">
@@ -171,7 +171,7 @@ export function ProductDetails({ product }: { product: Product }) {
                         key={i}
                         className={`w-4 h-4 ${
                           i < Math.round(avgRating)
-                            ? 'fill-kallos-gold text-kallos-gold'
+                            ? 'fill-kallos-crimson text-kallos-crimson'
                             : 'text-kallos-warm-grey'
                         }`}
                       />
@@ -214,7 +214,7 @@ export function ProductDetails({ product }: { product: Product }) {
                           aria-label={`Select size ${size}`}
                           className={`w-12 h-12 border text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
                             isSelected
-                              ? 'border-kallos-gold text-kallos-gold'
+                              ? 'border-kallos-crimson text-kallos-crimson'
                               : 'border-kallos-ivory/20 text-kallos-ivory hover:border-kallos-ivory/40'
                           }`}
                         >
@@ -240,7 +240,7 @@ export function ProductDetails({ product }: { product: Product }) {
                           aria-label={`Select color ${color}`}
                           className={`px-4 py-2 border text-sm transition-all ${
                             isSelected
-                              ? 'border-kallos-gold text-kallos-gold'
+                              ? 'border-kallos-crimson text-kallos-crimson'
                               : 'border-kallos-ivory/20 text-kallos-ivory hover:border-kallos-ivory/40'
                           }`}
                         >
@@ -277,7 +277,7 @@ export function ProductDetails({ product }: { product: Product }) {
                 {!user ? (
                   <a
                     href="/login"
-                    className="flex-1 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors text-center"
+                    className="flex-1 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors text-center"
                   >
                     Sign In to Add to Cart
                   </a>
@@ -285,7 +285,7 @@ export function ProductDetails({ product }: { product: Product }) {
                   <button
                     onClick={() => { setCartError(''); cartMutation.mutate(); }}
                     disabled={cartMutation.isPending || !inStock || !selectedVariant}
-                    className="flex-1 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50"
+                    className="flex-1 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors disabled:opacity-50"
                   >
                     {cartMutation.isPending ? 'Adding...' : cartMutation.isSuccess ? 'Added!' : inStock ? 'Add to Cart' : 'Out of Stock'}
                   </button>
@@ -295,11 +295,11 @@ export function ProductDetails({ product }: { product: Product }) {
                   aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
                   className={`w-14 h-14 border flex items-center justify-center transition-colors ${
                     isWishlisted
-                      ? 'border-kallos-gold text-kallos-gold'
-                      : 'border-kallos-ivory/20 text-kallos-ivory hover:border-kallos-gold hover:text-kallos-gold'
+                      ? 'border-kallos-crimson text-kallos-crimson'
+                      : 'border-kallos-ivory/20 text-kallos-ivory hover:border-kallos-crimson hover:text-kallos-crimson'
                   }`}
                 >
-                  <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-kallos-gold' : ''}`} />
+                  <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-kallos-crimson' : ''}`} />
                 </button>
               </div>
               {cartError && <p className="text-red-400 text-xs mt-2">{cartError}</p>}
@@ -331,7 +331,7 @@ export function ProductDetails({ product }: { product: Product }) {
                                 key={i}
                                 className={`w-3 h-3 ${
                                   i < review.rating
-                                    ? 'fill-kallos-gold text-kallos-gold'
+                                    ? 'fill-kallos-crimson text-kallos-crimson'
                                     : 'text-kallos-warm-grey'
                                 }`}
                               />

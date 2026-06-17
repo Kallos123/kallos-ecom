@@ -11,7 +11,10 @@
     --kallos-charcoal: #252525;
     --kallos-ivory: #F7F5F0;
     --kallos-cream: #FAF9F6;
-    --kallos-gold: #B4975A;
+    /* Accent = logo crimson; gold kept as alias for legacy tokens */
+    --kallos-crimson: #9f1239;
+    --kallos-crimson-light: #be1d4a;
+    --kallos-gold: var(--kallos-crimson);
     --kallos-champagne: #D4C4A8;
     --kallos-sand: #E3DCD2;
     --kallos-warm-grey: #8E8881;
@@ -28,12 +31,12 @@
     --secondary-foreground: var(--kallos-charcoal);
     --muted: var(--kallos-sand);
     --muted-foreground: var(--kallos-warm-grey);
-    --accent: var(--kallos-gold);
+    --accent: var(--kallos-crimson);
     --accent-foreground: var(--kallos-ivory);
     --destructive: #AF3A3A;
     --border: rgba(37, 37, 37, 0.1);
     --input: rgba(37, 37, 37, 0.05);
-    --ring: var(--kallos-gold);
+    --ring: var(--kallos-crimson);
   }
 
   .dark {
@@ -49,12 +52,12 @@
     --secondary-foreground: var(--kallos-ivory);
     --muted: #181818;
     --muted-foreground: var(--kallos-warm-grey);
-    --accent: var(--kallos-gold);
-    --accent-foreground: var(--kallos-black);
+    --accent: var(--kallos-crimson);
+    --accent-foreground: var(--kallos-ivory);
     --destructive: #AF3A3A;
     --border: rgba(247, 245, 240, 0.07);
     --input: rgba(247, 245, 240, 0.05);
-    --ring: var(--kallos-gold);
+    --ring: var(--kallos-crimson);
   }
 
 @theme inline {
@@ -70,6 +73,8 @@
   --color-kallos-champagne: var(--kallos-champagne);
   --color-kallos-sand: var(--kallos-sand);
   --color-kallos-warm-grey: var(--kallos-warm-grey);
+  --color-kallos-crimson: var(--kallos-crimson);
+  --color-kallos-crimson-light: var(--kallos-crimson-light);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -109,8 +114,8 @@
   }
   
   ::selection {
-    background: var(--kallos-gold);
-    color: var(--kallos-black);
+    background: var(--kallos-crimson);
+    color: var(--kallos-ivory);
   }
 }
 
@@ -160,9 +165,9 @@
   .gold-shimmer {
     background: linear-gradient(
       90deg,
-      var(--kallos-champagne) 0%,
-      var(--kallos-gold) 50%,
-      var(--kallos-champagne) 100%
+      var(--kallos-crimson-light) 0%,
+      var(--kallos-crimson) 50%,
+      var(--kallos-crimson-light) 100%
     );
     background-size: 200% 100%;
     animation: shimmer 3s ease-in-out infinite;

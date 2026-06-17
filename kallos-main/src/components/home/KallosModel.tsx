@@ -29,7 +29,7 @@ function ModelFallback() {
   return (
     <mesh>
       <sphereGeometry args={[0.5, 32, 32]} />
-      <meshStandardMaterial color="#B4975A" wireframe />
+      <meshStandardMaterial color="#9f1239" wireframe />
     </mesh>
   );
 }

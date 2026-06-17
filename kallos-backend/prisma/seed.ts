@@ -128,6 +128,11 @@ async function main() {
       careInstructions: 'Machine wash cold. Do not bleach. Tumble dry low.',
       isFeatured: true,
       tags: ['oversized', 'cotton', 'white', 'basics', 'new-arrival'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1200&q=90', publicId: 'unsplash/photo-1521572163474-6864f9cf17ab', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=1200&q=90', publicId: 'unsplash/photo-1586790170083-2f9ceadc732d', isPrimary: false, sortOrder: 1 },
+        { url: 'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=1200&q=90', publicId: 'unsplash/photo-1622445275463-afa2ab738c34', isPrimary: false, sortOrder: 2 },
+      ],
       variants: [
         { size: 'S', color: 'White', colorHex: '#FFFFFF', sku: 'KAL-CWOT-S-WHT', stock: 50, price: null },
         { size: 'M', color: 'White', colorHex: '#FFFFFF', sku: 'KAL-CWOT-M-WHT', stock: 80, price: null },
@@ -148,6 +153,11 @@ async function main() {
       careInstructions: 'Machine wash cold. Wash dark colors separately.',
       isFeatured: true,
       tags: ['oversized', 'cotton', 'black', 'basics'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=1200&q=90', publicId: 'unsplash/photo-1503341455253-b2e723bb3dbb', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=1200&q=90', publicId: 'unsplash/photo-1583743814966-8936f5b7be1a', isPrimary: false, sortOrder: 1 },
+        { url: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=1200&q=90', publicId: 'unsplash/photo-1618354691373-d851c5c3a990', isPrimary: false, sortOrder: 2 },
+      ],
       variants: [
         { size: 'S', color: 'Black', colorHex: '#000000', sku: 'KAL-CBOT-S-BLK', stock: 60, price: null },
         { size: 'M', color: 'Black', colorHex: '#000000', sku: 'KAL-CBOT-M-BLK', stock: 90, price: null },
@@ -168,6 +178,10 @@ async function main() {
       careInstructions: 'Hand wash recommended. Cold water only.',
       isFeatured: true,
       tags: ['graphic', 'acid-wash', 'streetwear', 'limited'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=1200&q=90', publicId: 'unsplash/photo-1576566588028-4147f3842f27', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=1200&q=90', publicId: 'unsplash/photo-1529374255404-311a2a4f1fd9', isPrimary: false, sortOrder: 1 },
+      ],
       variants: [
         { size: 'S', color: 'Beige', colorHex: '#D4B896', sku: 'KAL-AWGT-S-BEI', stock: 15, price: null },
         { size: 'M', color: 'Beige', colorHex: '#D4B896', sku: 'KAL-AWGT-M-BEI', stock: 25, price: null },
@@ -190,6 +204,11 @@ async function main() {
       careInstructions: 'Machine wash cold. Tumble dry low. Do not iron print.',
       isFeatured: true,
       tags: ['hoodie', 'fleece', 'winter', 'heavyweight'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=1200&q=90', publicId: 'unsplash/photo-1556821840-3a63f15732ce', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=1200&q=90', publicId: 'unsplash/photo-1591047139829-d91aecb6caea', isPrimary: false, sortOrder: 1 },
+        { url: 'https://images.unsplash.com/photo-1509942774463-acf339cf87d5?w=1200&q=90', publicId: 'unsplash/photo-1509942774463-acf339cf87d5', isPrimary: false, sortOrder: 2 },
+      ],
       variants: [
         { size: 'S', color: 'Charcoal', colorHex: '#36393F', sku: 'KAL-EPH-S-CHR', stock: 30, price: null },
         { size: 'M', color: 'Charcoal', colorHex: '#36393F', sku: 'KAL-EPH-M-CHR', stock: 45, price: null },
@@ -216,6 +235,10 @@ async function main() {
       careInstructions: 'Machine wash cold inside out. Do not bleach.',
       isFeatured: false,
       tags: ['hoodie', 'zip-up', 'washed', 'streetwear'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1614495151270-6b5e2cd8d21d?w=1200&q=90', publicId: 'unsplash/photo-1614495151270-6b5e2cd8d21d', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1617952986600-802f965dcdbc?w=1200&q=90', publicId: 'unsplash/photo-1617952986600-802f965dcdbc', isPrimary: false, sortOrder: 1 },
+      ],
       variants: [
         { size: 'S', color: 'Washed Black', colorHex: '#2C2C2C', sku: 'KAL-ZUH-S-WBK', stock: 20, price: null },
         { size: 'M', color: 'Washed Black', colorHex: '#2C2C2C', sku: 'KAL-ZUH-M-WBK', stock: 30, price: null },
@@ -235,6 +258,11 @@ async function main() {
       careInstructions: 'Spot clean only. Do not machine wash.',
       isFeatured: true,
       tags: ['cap', 'snapback', 'accessories', 'streetwear'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=1200&q=90', publicId: 'unsplash/photo-1588850561407-ed78c282e89b', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1574180566232-aaad1b5b8450?w=1200&q=90', publicId: 'unsplash/photo-1574180566232-aaad1b5b8450', isPrimary: false, sortOrder: 1 },
+        { url: 'https://images.unsplash.com/photo-1534215754734-18e55d13e346?w=1200&q=90', publicId: 'unsplash/photo-1534215754734-18e55d13e346', isPrimary: false, sortOrder: 2 },
+      ],
       variants: [
         { size: 'One Size', color: 'Black', colorHex: '#000000', sku: 'KAL-SC-OS-BLK', stock: 50, price: null },
         { size: 'One Size', color: 'Cream', colorHex: '#F5F0E8', sku: 'KAL-SC-OS-CRM', stock: 40, price: null },
@@ -253,6 +281,10 @@ async function main() {
       careInstructions: 'Hand wash cold. Air dry.',
       isFeatured: false,
       tags: ['cap', 'dad-cap', 'accessories', 'washed'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=1200&q=90', publicId: 'unsplash/photo-1521369909029-2afed882baee', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8?w=1200&q=90', publicId: 'unsplash/photo-1533827432537-70133748f5c8', isPrimary: false, sortOrder: 1 },
+      ],
       variants: [
         { size: 'One Size', color: 'Washed Black', colorHex: '#2C2C2C', sku: 'KAL-DC-OS-WBK', stock: 35, price: null },
         { size: 'One Size', color: 'Washed Navy', colorHex: '#1C2A4A', sku: 'KAL-DC-OS-WNV', stock: 30, price: null },
@@ -271,6 +303,11 @@ async function main() {
       careInstructions: 'Machine wash cold. Air dry. Do not iron print.',
       isFeatured: true,
       tags: ['bag', 'tote', 'canvas', 'accessories'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=1200&q=90', publicId: 'unsplash/photo-1622560480605-d83c853bc5c3', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&q=90', publicId: 'unsplash/photo-1544816155-12df9643f363', isPrimary: false, sortOrder: 1 },
+        { url: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1200&q=90', publicId: 'unsplash/photo-1584917865442-de89df76afd3', isPrimary: false, sortOrder: 2 },
+      ],
       variants: [
         { size: null, color: 'Natural', colorHex: '#E8DCC8', sku: 'KAL-ETB-NAT', stock: 60, price: null },
         { size: null, color: 'Black', colorHex: '#000000', sku: 'KAL-ETB-BLK', stock: 50, price: null },
@@ -288,6 +325,10 @@ async function main() {
       careInstructions: 'Machine wash warm. Tumble dry low.',
       isFeatured: false,
       tags: ['socks', 'accessories', 'basics', 'bundle'],
+      images: [
+        { url: 'https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=1200&q=90', publicId: 'unsplash/photo-1586350977771-b3b0abd50c82', isPrimary: true, sortOrder: 0 },
+        { url: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&q=90', publicId: 'unsplash/photo-1542291026-7eec264c27ff', isPrimary: false, sortOrder: 1 },
+      ],
       variants: [
         { size: 'S/M (UK 4–7)', color: 'White', colorHex: '#FFFFFF', sku: 'KAL-AS3-SM-WHT', stock: 80, price: null },
         { size: 'L/XL (UK 8–11)', color: 'White', colorHex: '#FFFFFF', sku: 'KAL-AS3-LX-WHT', stock: 70, price: null },
@@ -298,9 +339,21 @@ async function main() {
   ];
 
   for (const p of products) {
-    const existing = await prisma.product.findUnique({ where: { slug: p.slug } });
+    const existing = await prisma.product.findUnique({
+      where: { slug: p.slug },
+      include: { images: true },
+    });
+
     if (existing) {
-      console.log(`⏭️  Skipping existing: ${p.name}`);
+      // Product exists — seed images if it has none
+      if (existing.images.length === 0) {
+        await prisma.productImage.createMany({
+          data: p.images.map((img) => ({ ...img, productId: existing.id })),
+        });
+        console.log(`📸 Added images to existing: ${p.name}`);
+      } else {
+        console.log(`⏭️  Skipping existing: ${p.name}`);
+      }
       continue;
     }
 
@@ -318,6 +371,7 @@ async function main() {
         isFeatured: p.isFeatured,
         isActive: true,
         tags: { create: p.tags.map((tag) => ({ tag })) },
+        images: { create: p.images },
         variants: {
           create: p.variants.map((v) => ({
             size: v.size,

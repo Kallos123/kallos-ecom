@@ -67,7 +67,7 @@ export default function CartPage() {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="mb-16">
-            <p className="text-xs tracking-[0.4em] text-kallos-gold mb-4 uppercase">Your Selection</p>
+            <p className="text-xs tracking-[0.4em] text-kallos-crimson mb-4 uppercase">Your Selection</p>
             <h1 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-kallos-ivory tracking-wide">
               Shopping Cart
             </h1>
@@ -79,7 +79,7 @@ export default function CartPage() {
               <p className="text-kallos-warm-grey text-lg mb-8">Sign in to view your cart</p>
               <Link
                 href="/login"
-                className="inline-block px-8 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors"
+                className="inline-block px-8 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors"
               >
                 Sign In
               </Link>
@@ -96,7 +96,7 @@ export default function CartPage() {
               <p className="text-kallos-warm-grey text-lg mb-8">Your cart is empty</p>
               <Link
                 href="/shop"
-                className="inline-block px-8 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors"
+                className="inline-block px-8 py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors"
               >
                 Continue Shopping
               </Link>
@@ -131,7 +131,7 @@ export default function CartPage() {
                       <div className="flex-1 min-w-0">
                         <Link
                           href={`/product/${product.slug}`}
-                          className="font-editorial text-lg text-kallos-ivory hover:text-kallos-gold transition-colors block truncate"
+                          className="font-editorial text-lg text-kallos-ivory hover:text-kallos-crimson transition-colors block truncate"
                         >
                           {product.name}
                         </Link>
@@ -205,7 +205,7 @@ export default function CartPage() {
 
                   <Link
                     href="/checkout"
-                    className="block w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors text-center"
+                    className="block w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors text-center"
                   >
                     Proceed to Checkout
                   </Link>

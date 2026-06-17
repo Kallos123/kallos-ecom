@@ -31,12 +31,12 @@ export default function ProfilePage() {
     onError: (e: any) => setPwMsg(e.message),
   });
 
-  const inputCls = "w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm";
+  const inputCls = "w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm";
   const labelCls = "block text-[10px] tracking-[0.3em] text-kallos-ivory/60 uppercase mb-2";
 
   return (
     <div>
-      <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">Settings</p>
+      <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">Settings</p>
       <h1 className="font-editorial text-4xl text-kallos-ivory mb-10">My Profile</h1>
 
       {/* Tabs */}
@@ -46,7 +46,7 @@ export default function ProfilePage() {
             key={t}
             onClick={() => { setTab(t); setProfileMsg(''); setPwMsg(''); }}
             className={`pb-3 text-xs tracking-[0.2em] uppercase transition-colors ${
-              tab === t ? 'text-kallos-gold border-b border-kallos-gold' : 'text-kallos-ivory/40 hover:text-kallos-ivory'
+              tab === t ? 'text-kallos-crimson border-b border-kallos-crimson' : 'text-kallos-ivory/40 hover:text-kallos-ivory'
             }`}
           >
             {t === 'profile' ? 'Personal Info' : 'Change Password'}
@@ -75,7 +75,7 @@ export default function ProfilePage() {
             <input id="profile-email" className={`${inputCls} opacity-40`} value={user?.email} disabled />
           </div>
           {profileMsg && <p className={`text-xs ${profileMsg.includes('updated') ? 'text-green-400' : 'text-red-400'}`}>{profileMsg}</p>}
-          <button type="submit" disabled={profileMutation.isPending} className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50">
+          <button type="submit" disabled={profileMutation.isPending} className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors disabled:opacity-50">
             {profileMutation.isPending ? 'Saving...' : 'Save Changes'}
           </button>
         </form>
@@ -100,7 +100,7 @@ export default function ProfilePage() {
             <input id="profile-confirm-password" type="password" className={inputCls} value={pw.confirm} onChange={e => setPw(p => ({ ...p, confirm: e.target.value }))} required />
           </div>
           {pwMsg && <p className={`text-xs ${pwMsg.includes('changed') ? 'text-green-400' : 'text-red-400'}`}>{pwMsg}</p>}
-          <button type="submit" disabled={pwMutation.isPending} className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50">
+          <button type="submit" disabled={pwMutation.isPending} className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors disabled:opacity-50">
             {pwMutation.isPending ? 'Updating...' : 'Update Password'}
           </button>
         </form>

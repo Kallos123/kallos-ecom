@@ -23,7 +23,7 @@ export function ShopFilters({ currentCategory }: { currentCategory?: string }) {
         href="/shop"
         className={`px-4 py-2 text-xs tracking-[0.15em] uppercase transition-all duration-300 border ${
           !currentCategory
-            ? 'border-kallos-gold text-kallos-gold'
+            ? 'border-kallos-crimson text-kallos-crimson'
             : 'border-kallos-ivory/20 text-kallos-ivory/60 hover:border-kallos-ivory/40 hover:text-kallos-ivory'
         }`}
       >
@@ -37,7 +37,7 @@ export function ShopFilters({ currentCategory }: { currentCategory?: string }) {
             href={`/shop?category=${cat.slug}`}
             className={`px-4 py-2 text-xs tracking-[0.15em] uppercase transition-all duration-300 border ${
               isActive
-                ? 'border-kallos-gold text-kallos-gold'
+                ? 'border-kallos-crimson text-kallos-crimson'
                 : 'border-kallos-ivory/20 text-kallos-ivory/60 hover:border-kallos-ivory/40 hover:text-kallos-ivory'
             }`}
           >

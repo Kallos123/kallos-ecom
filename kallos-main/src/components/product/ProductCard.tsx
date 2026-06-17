@@ -65,7 +65,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
               {product.category.name}
             </p>
           )}
-          <h3 className="font-editorial text-lg text-kallos-ivory group-hover:text-kallos-gold transition-colors duration-300">
+          <h3 className="font-editorial text-lg text-kallos-ivory group-hover:text-kallos-crimson transition-colors duration-300">
             {product.name}
           </h3>
           <p className="text-sm text-kallos-warm-grey">

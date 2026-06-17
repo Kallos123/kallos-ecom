@@ -67,7 +67,7 @@ export default function RegisterPage() {
             className="font-editorial text-5xl text-kallos-ivory leading-tight mb-4"
           >
             Join the<br />
-            <span className="italic text-kallos-gold">House of Kallos</span>
+            <span className="italic text-kallos-crimson">House of Kallos</span>
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
@@ -95,7 +95,7 @@ export default function RegisterPage() {
             KALLOS
           </Link>
 
-          <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">Create account</p>
+          <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">Create account</p>
           <h1 className="font-editorial text-4xl text-kallos-ivory mb-10">Register</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -109,7 +109,7 @@ export default function RegisterPage() {
                   value={form.firstName}
                   onChange={set('firstName')}
                   required
-                  className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+                  className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
                   placeholder="First"
                 />
               </div>
@@ -122,7 +122,7 @@ export default function RegisterPage() {
                   value={form.lastName}
                   onChange={set('lastName')}
                   required
-                  className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+                  className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
                   placeholder="Last"
                 />
               </div>
@@ -138,7 +138,7 @@ export default function RegisterPage() {
                 onChange={set('email')}
                 required
                 autoComplete="email"
-                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
                 placeholder="your@email.com"
               />
             </div>
@@ -153,7 +153,7 @@ export default function RegisterPage() {
                 onChange={set('password')}
                 required
                 autoComplete="new-password"
-                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
                 placeholder="Min. 8 characters"
               />
             </div>
@@ -168,7 +168,7 @@ export default function RegisterPage() {
                 onChange={set('confirm')}
                 required
                 autoComplete="new-password"
-                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+                className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
                 placeholder="••••••••"
               />
             </div>
@@ -180,7 +180,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors duration-300 disabled:opacity-50 mt-4"
+              className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300 disabled:opacity-50 mt-4"
             >
               {loading ? 'Creating account...' : 'Create Account'}
             </button>
@@ -188,7 +188,7 @@ export default function RegisterPage() {
 
           <p className="mt-10 text-kallos-ivory/40 text-xs tracking-wide text-center">
             Already have an account?{' '}
-            <Link href="/login" className="text-kallos-ivory hover:text-kallos-gold transition-colors">
+            <Link href="/login" className="text-kallos-ivory hover:text-kallos-crimson transition-colors">
               Sign in
             </Link>
           </p>

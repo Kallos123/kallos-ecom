@@ -118,8 +118,8 @@ export default function OrderDetailPage() {
   const cancellable = ['PENDING_PAYMENT', 'CONFIRMED', 'PROCESSING'].includes(order.orderStatus);
   const returnable = order.orderStatus === 'DELIVERED' && !order.returnRequest;
 
-  const selectCls = "w-full bg-kallos-black border border-kallos-ivory/20 text-kallos-ivory text-sm px-3 py-2 focus:outline-none focus:border-kallos-gold";
-  const inputCls = "w-full bg-transparent border-b border-kallos-ivory/20 py-2 text-kallos-ivory placeholder:text-kallos-ivory/30 text-sm focus:outline-none focus:border-kallos-gold";
+  const selectCls = "w-full bg-kallos-black border border-kallos-ivory/20 text-kallos-ivory text-sm px-3 py-2 focus:outline-none focus:border-kallos-crimson";
+  const inputCls = "w-full bg-transparent border-b border-kallos-ivory/20 py-2 text-kallos-ivory placeholder:text-kallos-ivory/30 text-sm focus:outline-none focus:border-kallos-crimson";
 
   return (
     <div>
@@ -140,7 +140,7 @@ export default function OrderDetailPage() {
 
       <div className="flex flex-wrap items-start justify-between gap-4 mb-10">
         <div>
-          <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-2">{order.orderNumber}</p>
+          <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-2">{order.orderNumber}</p>
           <h1 className="font-editorial text-3xl text-kallos-ivory">Order Detail</h1>
         </div>
         <span className={`text-sm ${STATUS_COLORS[order.orderStatus] ?? 'text-kallos-warm-grey'}`}>
@@ -175,7 +175,7 @@ export default function OrderDetailPage() {
               {order.statusHistory.map((h, i) => (
                 <div key={h.id} className="flex gap-4">
                   <div className="flex flex-col items-center">
-                    <div className={`w-2 h-2 rounded-full mt-1 ${i === 0 ? 'bg-kallos-gold' : 'bg-kallos-ivory/20'}`} />
+                    <div className={`w-2 h-2 rounded-full mt-1 ${i === 0 ? 'bg-kallos-crimson' : 'bg-kallos-ivory/20'}`} />
                     {i < order.statusHistory.length - 1 && <div className="w-px flex-1 bg-kallos-ivory/10 mt-1" />}
                   </div>
                   <div className="pb-4">
@@ -204,7 +204,7 @@ export default function OrderDetailPage() {
             {returnable && (
               <button
                 onClick={() => setShowReturn(true)}
-                className="px-6 py-3 border border-kallos-ivory/20 text-kallos-ivory text-xs tracking-[0.2em] uppercase hover:border-kallos-gold hover:text-kallos-gold transition-colors"
+                className="px-6 py-3 border border-kallos-ivory/20 text-kallos-ivory text-xs tracking-[0.2em] uppercase hover:border-kallos-crimson hover:text-kallos-crimson transition-colors"
               >
                 Request Return
               </button>
@@ -244,7 +244,7 @@ export default function OrderDetailPage() {
                 />
               </div>
               <div className="flex gap-3">
-                <button onClick={() => returnMutation.mutate()} disabled={returnMutation.isPending} className="px-6 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50">
+                <button onClick={() => returnMutation.mutate()} disabled={returnMutation.isPending} className="px-6 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors disabled:opacity-50">
                   {returnMutation.isPending ? 'Submitting...' : 'Submit'}
                 </button>
                 <button onClick={() => setShowReturn(false)} className="px-6 py-3 border border-kallos-ivory/20 text-kallos-ivory text-xs tracking-[0.2em] uppercase hover:border-kallos-ivory/40 transition-colors">

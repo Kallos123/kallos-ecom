@@ -61,7 +61,7 @@ const EMPTY_ADDR = {
   city: '', state: '', pincode: '', isDefault: false,
 };
 
-const inputCls = "w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm";
+const inputCls = "w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm";
 const labelCls = "block text-[10px] tracking-[0.3em] text-kallos-ivory/60 uppercase mb-2";
 const formatPrice = (n: number) =>
   new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(n);
@@ -222,7 +222,7 @@ export default function CheckoutPage() {
       description: `Order ${rzpOrder.orderNumber}`,
       order_id: rzpOrder.razorpayOrderId,
       prefill: { name: `${user?.firstName} ${user?.lastName}`, email: user?.email },
-      theme: { color: '#B4975A' },
+      theme: { color: '#9f1239' },
       handler: async (response: any) => {
         await api.post('/payments/verify', {
           razorpayOrderId: response.razorpay_order_id,
@@ -248,7 +248,7 @@ export default function CheckoutPage() {
         <Header />
         <div className="pt-40 text-center">
           <p className="text-kallos-warm-grey mb-6">Please sign in to checkout</p>
-          <Link href="/login" className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors">
+          <Link href="/login" className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors">
             Sign In
           </Link>
         </div>
@@ -262,7 +262,7 @@ export default function CheckoutPage() {
         <Header />
         <div className="pt-40 text-center">
           <p className="text-kallos-warm-grey mb-6">Your cart is empty</p>
-          <Link href="/shop" className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-gold transition-colors">
+          <Link href="/shop" className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.2em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors">
             Continue Shopping
           </Link>
         </div>
@@ -275,7 +275,7 @@ export default function CheckoutPage() {
       <Header />
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">Almost there</p>
+          <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">Almost there</p>
           <h1 className="font-editorial text-4xl md:text-5xl text-kallos-ivory mb-12">Checkout</h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -285,28 +285,28 @@ export default function CheckoutPage() {
               {/* ── Address ── */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
-                  <MapPin className="w-4 h-4 text-kallos-gold" />
+                  <MapPin className="w-4 h-4 text-kallos-crimson" />
                   <h2 className="text-xs tracking-[0.3em] uppercase text-kallos-ivory">Delivery Address</h2>
                 </div>
 
                 {addresses.length > 0 && (
                   <div className="space-y-3 mb-4">
                     {addresses.map(addr => (
-                      <label key={addr.id} className={`flex items-start gap-4 p-5 bg-kallos-charcoal cursor-pointer border-l-2 transition-colors ${selectedAddressId === addr.id ? 'border-kallos-gold' : 'border-transparent'}`}>
+                      <label key={addr.id} className={`flex items-start gap-4 p-5 bg-kallos-charcoal cursor-pointer border-l-2 transition-colors ${selectedAddressId === addr.id ? 'border-kallos-crimson' : 'border-transparent'}`}>
                         <input
                           type="radio"
                           name="address"
                           value={addr.id}
                           checked={selectedAddressId === addr.id}
                           onChange={() => setSelectedAddressId(addr.id)}
-                          className="mt-1 accent-kallos-gold"
+                          className="mt-1 accent-kallos-crimson"
                         />
                         <div className="text-sm">
                           <p className="text-kallos-ivory font-medium">{addr.fullName} · {addr.phone}</p>
                           <p className="text-kallos-warm-grey mt-0.5">
                             {addr.addressLine1}{addr.addressLine2 ? `, ${addr.addressLine2}` : ''}, {addr.city}, {addr.state} — {addr.pincode}
                           </p>
-                          {addr.isDefault && <span className="text-[9px] tracking-widest uppercase text-kallos-gold">Default</span>}
+                          {addr.isDefault && <span className="text-[9px] tracking-widest uppercase text-kallos-crimson">Default</span>}
                         </div>
                       </label>
                     ))}
@@ -315,7 +315,7 @@ export default function CheckoutPage() {
 
                 <button
                   onClick={() => setShowAddAddr(v => !v)}
-                  className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-kallos-ivory/60 hover:text-kallos-gold transition-colors"
+                  className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-kallos-ivory/60 hover:text-kallos-crimson transition-colors"
                 >
                   {showAddAddr ? <ChevronUp className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
                   {showAddAddr ? 'Cancel' : 'Add New Address'}
@@ -358,7 +358,7 @@ export default function CheckoutPage() {
                     <button
                       onClick={() => addAddressMutation.mutate()}
                       disabled={addAddressMutation.isPending}
-                      className="px-6 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50"
+                      className="px-6 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors disabled:opacity-50"
                     >
                       {addAddressMutation.isPending ? 'Saving...' : 'Save & Select'}
                     </button>
@@ -369,7 +369,7 @@ export default function CheckoutPage() {
               {/* ── Coupon ── */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
-                  <Tag className="w-4 h-4 text-kallos-gold" />
+                  <Tag className="w-4 h-4 text-kallos-crimson" />
                   <h2 className="text-xs tracking-[0.3em] uppercase text-kallos-ivory">Coupon Code</h2>
                 </div>
                 {appliedCoupon ? (
@@ -393,7 +393,7 @@ export default function CheckoutPage() {
                     <label htmlFor="coupon-code" className="sr-only">Coupon code</label>
                     <input
                       id="coupon-code"
-                      className="flex-1 bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm uppercase tracking-widest"
+                      className="flex-1 bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm uppercase tracking-widest"
                       placeholder="Enter code"
                       value={couponInput}
                       onChange={e => { setCouponInput(e.target.value.toUpperCase()); setCouponError(''); }}
@@ -401,7 +401,7 @@ export default function CheckoutPage() {
                     <button
                       onClick={() => couponMutation.mutate()}
                       disabled={!couponInput || couponMutation.isPending}
-                      className="px-6 py-3 border border-kallos-ivory/20 text-kallos-ivory text-xs tracking-[0.2em] uppercase hover:border-kallos-gold hover:text-kallos-gold transition-colors disabled:opacity-40"
+                      className="px-6 py-3 border border-kallos-ivory/20 text-kallos-ivory text-xs tracking-[0.2em] uppercase hover:border-kallos-crimson hover:text-kallos-crimson transition-colors disabled:opacity-40"
                     >
                       {couponMutation.isPending ? '...' : 'Apply'}
                     </button>
@@ -414,7 +414,7 @@ export default function CheckoutPage() {
               {walletAvailable > 0 && (
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <Wallet className="w-4 h-4 text-kallos-gold" />
+                    <Wallet className="w-4 h-4 text-kallos-crimson" />
                     <h2 className="text-xs tracking-[0.3em] uppercase text-kallos-ivory">Wallet</h2>
                   </div>
                   <label className="flex items-center justify-between bg-kallos-charcoal px-5 py-4 cursor-pointer">
@@ -426,7 +426,7 @@ export default function CheckoutPage() {
                       type="checkbox"
                       checked={useWallet}
                       onChange={e => setUseWallet(e.target.checked)}
-                      className="accent-kallos-gold w-4 h-4"
+                      className="accent-kallos-crimson w-4 h-4"
                     />
                   </label>
                   {useWallet && walletToUse > 0 && (
@@ -444,14 +444,14 @@ export default function CheckoutPage() {
                       { value: 'RAZORPAY', label: 'Online Payment', sub: 'UPI, Cards, Net Banking' },
                       { value: 'COD', label: 'Cash on Delivery', sub: 'Pay when your order arrives' },
                     ].map(opt => (
-                      <label key={opt.value} className={`flex items-center gap-4 p-5 bg-kallos-charcoal cursor-pointer border-l-2 transition-colors ${paymentMethod === opt.value ? 'border-kallos-gold' : 'border-transparent'}`}>
+                      <label key={opt.value} className={`flex items-center gap-4 p-5 bg-kallos-charcoal cursor-pointer border-l-2 transition-colors ${paymentMethod === opt.value ? 'border-kallos-crimson' : 'border-transparent'}`}>
                         <input
                           type="radio"
                           name="payment"
                           value={opt.value}
                           checked={paymentMethod === opt.value}
                           onChange={() => setPaymentMethod(opt.value as any)}
-                          className="accent-kallos-gold"
+                          className="accent-kallos-crimson"
                         />
                         <div>
                           <p className="text-kallos-ivory text-sm">{opt.label}</p>
@@ -522,7 +522,7 @@ export default function CheckoutPage() {
                 <button
                   onClick={() => { setPlaceError(''); placeMutation.mutate(); }}
                   disabled={!selectedAddressId || placeMutation.isPending}
-                  className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50"
+                  className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors disabled:opacity-50"
                 >
                   {placeMutation.isPending
                     ? 'Processing...'

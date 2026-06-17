@@ -19,7 +19,7 @@ interface Address {
 
 const EMPTY_FORM = { fullName: '', phone: '', addressLine1: '', addressLine2: '', city: '', state: '', pincode: '', isDefault: false };
 
-const inputCls = "w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm";
+const inputCls = "w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm";
 const labelCls = "block text-[10px] tracking-[0.3em] text-kallos-ivory/60 uppercase mb-2";
 
 export default function AddressesPage() {
@@ -76,11 +76,11 @@ export default function AddressesPage() {
     <div>
       <div className="flex items-center justify-between mb-10">
         <div>
-          <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-2">Saved</p>
+          <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-2">Saved</p>
           <h1 className="font-editorial text-4xl text-kallos-ivory">Addresses</h1>
         </div>
         {!adding && !editing && (
-          <button onClick={openAdd} className="flex items-center gap-2 px-5 py-3 border border-kallos-ivory/20 text-kallos-ivory text-xs tracking-[0.2em] uppercase hover:border-kallos-gold hover:text-kallos-gold transition-colors">
+          <button onClick={openAdd} className="flex items-center gap-2 px-5 py-3 border border-kallos-ivory/20 text-kallos-ivory text-xs tracking-[0.2em] uppercase hover:border-kallos-crimson hover:text-kallos-crimson transition-colors">
             <Plus className="w-3 h-3" /> Add New
           </button>
         )}
@@ -104,11 +104,11 @@ export default function AddressesPage() {
             <div><label htmlFor="address-pincode" className={labelCls}>Pincode</label><input id="address-pincode" className={inputCls} value={form.pincode} onChange={set('pincode')} required placeholder="6 digits" maxLength={6} /></div>
           </div>
           <label className="flex items-center gap-3 cursor-pointer">
-            <input type="checkbox" checked={form.isDefault} onChange={set('isDefault')} className="accent-kallos-gold" />
+            <input type="checkbox" checked={form.isDefault} onChange={set('isDefault')} className="accent-kallos-crimson" />
             <span className="text-xs text-kallos-ivory/60 tracking-wide">Set as default address</span>
           </label>
           <div className="flex gap-3 pt-2">
-            <button type="submit" disabled={isPending} className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors disabled:opacity-50">
+            <button type="submit" disabled={isPending} className="px-8 py-3 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors disabled:opacity-50">
               {isPending ? 'Saving...' : editing ? 'Update' : 'Save Address'}
             </button>
             <button type="button" onClick={closeForm} className="px-6 py-3 border border-kallos-ivory/20 text-kallos-ivory text-xs tracking-[0.2em] uppercase hover:border-kallos-ivory/40 transition-colors">
@@ -127,12 +127,12 @@ export default function AddressesPage() {
       ) : (
         <div className="space-y-4">
           {addresses.map(addr => (
-            <div key={addr.id} className={`bg-kallos-charcoal p-6 border-l-2 ${addr.isDefault ? 'border-kallos-gold' : 'border-transparent'}`}>
+            <div key={addr.id} className={`bg-kallos-charcoal p-6 border-l-2 ${addr.isDefault ? 'border-kallos-crimson' : 'border-transparent'}`}>
               <div className="flex items-start justify-between gap-4">
                 <div className="text-sm space-y-1">
                   <div className="flex items-center gap-2">
                     <p className="text-kallos-ivory font-medium">{addr.fullName}</p>
-                    {addr.isDefault && <span className="text-[9px] tracking-[0.2em] uppercase text-kallos-gold">Default</span>}
+                    {addr.isDefault && <span className="text-[9px] tracking-[0.2em] uppercase text-kallos-crimson">Default</span>}
                   </div>
                   <p className="text-kallos-warm-grey">{addr.addressLine1}{addr.addressLine2 ? `, ${addr.addressLine2}` : ''}</p>
                   <p className="text-kallos-warm-grey">{addr.city}, {addr.state} — {addr.pincode}</p>
@@ -143,7 +143,7 @@ export default function AddressesPage() {
                     <button
                       onClick={() => defaultMutation.mutate(addr.id)}
                       aria-label={`Set ${addr.fullName}'s address as default`}
-                      className="h-11 w-11 flex items-center justify-center text-kallos-warm-grey hover:text-kallos-gold transition-colors"
+                      className="h-11 w-11 flex items-center justify-center text-kallos-warm-grey hover:text-kallos-crimson transition-colors"
                     >
                       <Star className="w-4 h-4" />
                     </button>

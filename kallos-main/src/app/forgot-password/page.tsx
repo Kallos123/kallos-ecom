@@ -47,15 +47,15 @@ export default function ForgotPasswordPage() {
             animate={{ opacity: 1 }}
             className="text-center"
           >
-            <div className="w-16 h-px bg-kallos-gold mx-auto mb-8" />
-            <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">Check your inbox</p>
+            <div className="w-16 h-px bg-kallos-crimson mx-auto mb-8" />
+            <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">Check your inbox</p>
             <h1 className="font-editorial text-4xl text-kallos-ivory mb-6">Email Sent</h1>
             <p className="text-kallos-ivory/50 text-sm leading-relaxed mb-10">
               If an account exists for <span className="text-kallos-ivory">{email}</span>, you'll receive a password reset link shortly.
             </p>
             <Link
               href="/login"
-              className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-kallos-ivory/60 hover:text-kallos-gold transition-colors"
+              className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-kallos-ivory/60 hover:text-kallos-crimson transition-colors"
             >
               <ArrowLeft className="w-3 h-3" />
               Back to Sign In
@@ -63,7 +63,7 @@ export default function ForgotPasswordPage() {
           </motion.div>
         ) : (
           <>
-            <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-3">Password recovery</p>
+            <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-3">Password recovery</p>
             <h1 className="font-editorial text-4xl text-kallos-ivory mb-4">Forgot Password</h1>
             <p className="text-kallos-ivory/50 text-sm leading-relaxed mb-10">
               Enter your email address and we'll send you a link to reset your password.
@@ -80,7 +80,7 @@ export default function ForgotPasswordPage() {
                   onChange={e => setEmail(e.target.value)}
                   required
                   autoFocus
-                  className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-gold transition-colors text-sm"
+                  className="w-full bg-transparent border-b border-kallos-ivory/20 py-3 text-kallos-ivory placeholder:text-kallos-ivory/30 focus:outline-none focus:border-kallos-crimson transition-colors text-sm"
                   placeholder="your@email.com"
                 />
               </div>
@@ -92,7 +92,7 @@ export default function ForgotPasswordPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-gold transition-colors duration-300 disabled:opacity-50"
+                className="w-full py-4 bg-kallos-ivory text-kallos-black text-xs tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors duration-300 disabled:opacity-50"
               >
                 {loading ? 'Sending...' : 'Send Reset Link'}
               </button>
@@ -101,7 +101,7 @@ export default function ForgotPasswordPage() {
             <div className="mt-10 text-center">
               <Link
                 href="/login"
-                className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-kallos-ivory/40 hover:text-kallos-gold transition-colors"
+                className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-kallos-ivory/40 hover:text-kallos-crimson transition-colors"
               >
                 <ArrowLeft className="w-3 h-3" />
                 Back to Sign In

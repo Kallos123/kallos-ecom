@@ -38,7 +38,7 @@ function renderSection(section: InfoPageSection) {
       <ul className="space-y-3 text-sm md:text-base text-kallos-ivory/70">
         {section.items.map((item) => (
           <li key={item} className="flex gap-3">
-            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-kallos-gold flex-none" />
+            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-kallos-crimson flex-none" />
             <span>{item}</span>
           </li>
         ))}
@@ -51,14 +51,14 @@ function renderSection(section: InfoPageSection) {
       <div className="grid gap-4 sm:grid-cols-2">
         {section.items.map((item) => (
           <div key={item.label} className="border border-kallos-ivory/10 px-5 py-5 bg-kallos-charcoal/60">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-kallos-gold mb-2">{item.label}</p>
+            <p className="text-[10px] tracking-[0.3em] uppercase text-kallos-crimson mb-2">{item.label}</p>
             {item.href ? (
               item.href.startsWith('mailto:') ? (
-                <a href={item.href} className="text-kallos-ivory hover:text-kallos-gold transition-colors break-all">
+                <a href={item.href} className="text-kallos-ivory hover:text-kallos-crimson transition-colors break-all">
                   {item.value}
                 </a>
               ) : (
-                <Link href={item.href} className="text-kallos-ivory hover:text-kallos-gold transition-colors break-all">
+                <Link href={item.href} className="text-kallos-ivory hover:text-kallos-crimson transition-colors break-all">
                   {item.value}
                 </Link>
               )
@@ -89,14 +89,14 @@ function renderSection(section: InfoPageSection) {
   }
 
   return (
-    <div className="border border-kallos-gold/20 bg-kallos-charcoal px-6 py-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <div className="border border-kallos-crimson/20 bg-kallos-charcoal px-6 py-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
       <div>
         <p className="text-kallos-ivory text-lg mb-2">{section.title}</p>
         <p className="text-kallos-ivory/65 text-sm leading-relaxed max-w-2xl">{section.body}</p>
       </div>
       <Link
         href={section.href}
-        className="inline-flex items-center justify-center px-5 py-3 border border-kallos-gold/40 text-kallos-gold text-[10px] tracking-[0.3em] uppercase hover:bg-kallos-gold hover:text-kallos-black transition-colors"
+        className="inline-flex items-center justify-center px-5 py-3 border border-kallos-crimson/40 text-kallos-crimson text-[10px] tracking-[0.3em] uppercase hover:bg-kallos-crimson hover:text-kallos-ivory transition-colors"
       >
         {section.linkLabel}
       </Link>
@@ -114,7 +114,7 @@ export function InfoPageClient({ slug }: { slug: InfoPageSlug }) {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="max-w-[1100px] mx-auto px-6 lg:px-12">
           <div className="border-b border-kallos-ivory/10 pb-12 mb-12">
-            <p className="text-[10px] tracking-[0.4em] text-kallos-gold uppercase mb-4">{page.eyebrow}</p>
+            <p className="text-[10px] tracking-[0.4em] text-kallos-crimson uppercase mb-4">{page.eyebrow}</p>
             <h1 className="font-editorial text-4xl md:text-6xl text-kallos-ivory mb-6">{page.title}</h1>
             <p className="text-kallos-ivory/60 text-sm md:text-lg leading-relaxed max-w-3xl">{page.lede}</p>
           </div>
@@ -123,7 +123,7 @@ export function InfoPageClient({ slug }: { slug: InfoPageSlug }) {
             {page.sections.map((section) => (
               <div key={`${section.type}-${section.title}`} className="space-y-5">
                 <div>
-                  <p className="text-[10px] tracking-[0.3em] uppercase text-kallos-gold mb-3">{page.category}</p>
+                  <p className="text-[10px] tracking-[0.3em] uppercase text-kallos-crimson mb-3">{page.category}</p>
                   <h2 className="text-kallos-ivory text-xl md:text-2xl">{section.title}</h2>
                 </div>
                 {renderSection(section)}
